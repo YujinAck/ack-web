@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+*div{
+
+  box-sizing: border-box;
+}
+
+.scale-hover-0:hover{
+  scale: 1.05;
+  transition: 0.3s;
+}
+.scale-hover-1:hover{
+  scale: 1.1;
+  transition: 0.3s;
+}
