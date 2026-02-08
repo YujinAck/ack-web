@@ -3,17 +3,43 @@ import HeaderComponent from './HeaderComponent.jsx'
 import TileHeader from '../components/TileHeader.jsx'
 import AckLogoPng from '../assets/ack-logo.png'
 import VicentePort from '../assets/portraits/vicente-img-2b.png'
+import { useMediaQuery } from 'react-responsive'
+const Desktop = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 992 })
+  return isDesktop ? children : null
+}
+const Tablet = ({ children }) => {
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
+  return isTablet ? children : null
+}
+const Mobile = ({ children }) => {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  return isMobile ? children : null
+}
+const Default = ({ children }) => {
+  const isNotMobile = useMediaQuery({ minWidth: 768 })
+  return isNotMobile ? children : null
+}
 function HomePage() {
+    
+  const isMobile = useMediaQuery({ maxWidth: 767 })
   return (
    <div>
         <HeaderComponent/>
+        <div style={{position:'fixed',top:'0',backgroundColor:'green'}}>
+            <Desktop>Desktop or laptop</Desktop>
+            <Tablet>Tablet</Tablet>
+            <Mobile>Mobile</Mobile>
+            <Default>Not mobile (desktop or laptop or tablet)</Default>
+            <p>{"isMobile: " + isMobile}</p>
+        </div>
         <div style={{}}>
             <div style={{height:'90vh',backgroundColor:'gray'}}></div>  {/* welcome photo, pics ng office, etc */}
           
             <div className='opening-slogan' style={{paddingTop:'24px',paddingBottom:'24px'}}>
                 <div>
-                    <h2 style={{fontWeight:'400', fontSize:'1.65rem',textAlign:'center',marginBottom:'0px'}}>From strategy to delivery - </h2>
-                    <h2 style={{fontWeight:'300', fontSize:'3.2rem',textAlign:'center',marginTop:'-20px'}}>confidence in execution</h2>
+                    <h2 style={{fontWeight:'400', fontSize:isMobile?'1.2rem':'1.65rem',textAlign:'center',marginBottom:'0px'}}>From strategy to delivery - </h2>
+                    <h2 style={{fontWeight:'300', fontSize:isMobile?'2.2rem':'3.2rem',textAlign:'center',marginTop:isMobile?'-10px':'-20px'}}>confidence in execution</h2>
                 </div>
             </div>
             
@@ -26,53 +52,49 @@ function HomePage() {
                 <div style={{backgroundColor:'magenta', width:'100%', height:'100%',marginLeft:'2px'}}> </div>
             </div>
 
-            <div style={{paddingLeft:'10vh',marginBottom:'14vh',display:'flex',height:'200px'}}>
+            <div style={{paddingLeft:isMobile?'18px':'10vw',marginBottom:'12vw',display:'flex'}}>
                 <div style={{width:'55%',paddingTop:'14vh'}}>
                     <p style={{width:'80%', fontSize:'2rem',fontWeight:'420',lineHeight: '2rem'}}>Delivering trusted, reliable services for secure and efficient operations.</p>
-                    <p style={{fontSize:'1rem',fontWeight:'360',marginTop:'12px'}}>Driving competitiveness, operational efficiency, and superior client experience in providing Avaloq services.</p>
+                    <p style={{fontSize:'1.1rem',fontWeight:'360',marginTop:'12px'}}>Driving competitiveness, operational efficiency, and superior client experience in providing Avaloq services.</p>
                 </div>
-                 <div style={{width:'45%'}}>
+                 <div style={{width:'45%',height:'300px',marginRight:'5vw'}}>
                      <img src={AckLogoPng} alt="ACK LOGO ICON" style={{ marginTop:'44px',width: '100%', height: '100%', objectFit:'contain' }} />
                 </div>
              </div>
 
              <div className='success-hist' style={{backgroundColor:'#ce1a38'}}>
                 <div>
-                    <p style={{marginLeft:'5vw',paddingTop:'10vh',paddingBottom:'8px',fontSize:'2rem',color:'white'}}>Our Project Success History</p>
+                    <p style={{marginLeft:isMobile?'18px':'5vw', textAlign:isMobile?'center':'',paddingTop:'10vh',paddingBottom:'8px',fontSize:isMobile?'1.6rem':'2rem',color:'white'}}>Our Project Success History</p>
                     <div style={{paddingTop:'4vw',paddingBottom:'6vh',paddingLeft:'5vw', paddingRight:'5vw',backgroundColor:'rgb(255, 234, 234)'}}>
                         <div className='success-show' style={{display:'flex', flexDirection: 'row', flexWrap: 'wrap',gap:'1rem', justifyContent:'center', width:'100%',alignContent:'center'}}>
                             <TileHeader title='Indonesian Bank'
                                 img='ID'
-                                line1='- Implementation of Secondary Bond'
-                                line2='- Release Upgrade' 
-                                line3=''
+                                tasks={['Implementation','Release Upgrade']}
+                                story='Implemented Secondary Bond functionality by configuring Avaloq components to support end-to-end trade processing and reporting. We also delivered Avaloq release upgrades through structured impact analysis and testing, ensuring a smooth transition while maintaining platform stability.'
                                 order={1}
                             /> 
                             <TileHeader title='Singapore Bank'
                                 img='SG'
-                                line1='- Run the Bank'
-                                line2='- Change the Bank' 
-                                line3=''
+                                tasks={['Run the Bank','Change the Bank']}
+                                story='We supported both Run the Bank and Change the Bank initiatives for Singaporean banks by ensuring stable daily Avaloq operations while delivering controlled enhancements aligned with evolving business needs. This approach enabled continuous improvement and regulatory readiness.'
                                 order={2}
                             /> 
                             <TileHeader title='Taiwanese Bank'
                                 img='TW'
-                                line1='- SIT / UAT Support'
-                                line2='- Interface related Enhancement' 
-                                line3=''
+                                tasks={['SIT Support','UAT Support','INTF Enhancement']}
+                                story='We provided SIT and UAT support for Taiwanese banks, ensuring smooth validation of Avaloq solutions and readiness for production. In parallel, we delivered interface component enhancements that improved system integration, data accuracy, and overall operational efficiency.'
                                 order={3}
                             /> 
                             <TileHeader title='Philippine Bank'
                                 img='PH'
-                                line1='- UAT / PGL Support​'
-                                line2='- Web Services' 
-                                line3=''
+                                tasks={['UAT Support','PGL Support','Web Services']}
+                                story='We supported UAT and PGL activities for Philippine banks, ensuring solutions were fully validated and ready for production use. In addition, we implemented Avaloq web services to enhance system connectivity, streamline integrations, and support reliable end-to-end business processes.'
                                 order={4}
                             /> 
                         </div>
                         <p style={{textAlign:'center',marginTop:'9vh',marginBottom:'11vh',fontWeight:'400',fontSize:'1.2rem'}}>
                             We bring a strong track record of successful banking projects across major regional markets. 
-                            <p >Driving successful outcomes for leading banks across the region.</p>
+                            {!isMobile&&<p >Driving successful outcomes for leading banks across the region.</p>}
                         </p>
                         
                     </div>
@@ -110,13 +132,13 @@ function HomePage() {
              </div> */}
 
 
-             <div className='testi-full-page1' style={{height:'100vh', backgroundSize: 'cover',backgroundImage: "url(" + VicentePort + ")"}}>
-                <div style={{ paddingTop:'16vh',paddingBottom:'8vh',height:'100%'}}>
-                    <div  style={{backgroundColor:'#f6f7f8', borderTopRightRadius:'18px',borderBottomRightRadius:'18px',width:'52vw',height:'100%'}}>
+             <div className='testi-full-page1' style={{ minHeight:'800px', backgroundSize: 'cover',backgroundImage: "url(" + VicentePort + ")"}}>
+                <div style={{ paddingTop:'16vh',paddingBottom:'8vh'}}>
+                    <div  style={{backgroundColor:'#f6f7f8', borderTopRightRadius:'18px',borderBottomRightRadius:'18px',width:isMobile?'100vw':'52vw',minWidth:'500px', height:'100%'}}>
                         <div style={{padding:'4vw'}}>
-                            <p style={{fontWeight:'500',fontSize:'1.5rem',color:'#cf1b39'}}>Why ACK Solutions Inc.</p>
-                            <p style={{fontWeight:'700',fontSize:'2.5rem',color:'#cf1b39'}}>From strategy to delivery</p>
-                            <p style={{fontWeight:'400',fontSize:'1.2rem',color:'rgb(60,60,60)',marginTop:'2vh'}}>ACK Solutions Inc. empowers organizations to move faster and deliver with confidence by reinforcing teams with highly experienced Avaloq specialists. We help teams achieve more by applying smart, efficient approaches that drive consistent, high-quality outcomes. Choosing ACK Solutions means gaining a reliable partner committed to performance, quality, and sustainable growth.</p>
+                            <p style={{fontWeight:'500',fontSize:isMobile?'1.2rem':'1.5rem',color:'#cf1b39'}}>Why ACK Solutions Inc.</p>
+                            <p style={{fontWeight:'700',fontSize:isMobile?'2rem':'2.5rem',color:'#cf1b39'}}>From strategy to delivery</p>
+                            <p style={{fontWeight:'400',fontSize:isMobile?'1rem':'1.2rem',color:'rgb(60,60,60)',marginTop:'2vw'}}>ACK Solutions Inc. empowers organizations to move faster and deliver with confidence by reinforcing teams with highly experienced Avaloq specialists. We help teams achieve more by applying smart, efficient approaches that drive consistent, high-quality outcomes. Choosing ACK Solutions means gaining a reliable partner committed to performance, quality, and sustainable growth.</p>
 
                             <div style={{display:'flex',marginTop:'4vw'}}>
                                 <div className='ack-a scale-hover-0' style={{margin:'6px', backgroundColor:'white',width:'100%',borderRadius:'10px',maxWidth:'220px',padding:'16px'}}>
@@ -150,48 +172,48 @@ function HomePage() {
              </div>
 
 
-             <div className='services-offered-full-page'  style={{height:'100vh',backgroundColor:'#f7f7f7'}}>
-                <p style={{fontSize:'2.3rem',fontWeight:'700',textAlign:'center',paddingTop:'8vh',color:'#3a4149'}}>Avaloq Services offered</p>
-                <p style={{ textAlign:'center', paddingLeft:'10vw', paddingBottom:'5vh', paddingRight:'10vw',fontWeight:'400',fontSize:'1.1rem',color:'rgb(60,60,60)'}}>We deliver comprehensive services covering consulting, training, customization, and ongoing maintenance. Our experts help organizations design the right solutions, build capable teams, tailor Avaloq to business needs, and ensure long-term platform stability.</p>
-                <div className='show-grid' style={{display:'flex',height:'70%',paddingLeft:'6vw',paddingRight:'6vw'}}>
+             <div className='services-offered-full-page'  style={{height:'100vh', minHeight:isMobile?'70vh':'800px', backgroundColor:'#f7f7f7',marginBottom:'6vh'}}>
+                <p style={{fontSize:isMobile?'1.9rem':'2.3rem',fontWeight:'700',textAlign:'center',paddingTop:'8vh',color:'#3a4149'}}>Avaloq Services offered</p>
+                <p style={{ textAlign:'center', paddingLeft:'10vw', paddingBottom:'5vh', paddingRight:'10vw',fontWeight:'400',fontSize:isMobile?'1rem':'1.2rem',color:'rgb(60,60,60)'}}>We deliver comprehensive services covering consulting, training, customization, and ongoing maintenance. Our experts help organizations design the right solutions, build capable teams, tailor Avaloq to business needs, and ensure long-term platform stability.</p>
+                <div className='show-grid' style={{display:'flex', minHeight:isMobile?'80vh':'', flexDirection: 'row', flexWrap: 'wrap',height:isMobile?'80%':'70%', justifyContent:'center', paddingLeft:isMobile?'12px':'6vw',paddingRight:isMobile?'12px':'6vw'}}>
                    
-                    <div className='service-1' style={{ width:'100%', height:'100%', marginRight:'6px'}}>
+                    <div className='service-1' style={{ width:'100%', height:'100%', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
                         <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:'72%',borderBottomRightRadius:'24px'}}>
-                                <p style={{fontSize:'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px'}}>CONSULTING</p>
+                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
+                                <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CONSULTING</p>
                             </div> 
                             <div style={{height:'100%'}}></div>
-                            <p style={{padding:'18px', fontSize:'1.1rem', fontWeight:'500',color:'white'}}>We analyze and design business requirements into effective, technology-driven solutions.</p>
+                            <p style={{padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We analyze and design business requirements into effective, technology-driven solutions.</p>
                         </div>
                     </div>
 
-                    <div className='service-2' style={{ width:'100%', height:'100%', marginLeft:'6px',marginRight:'6px'}}>
+                    <div className='service-2' style={{ width:'100%', height:'100%', marginLeft:'6px',marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
                         <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:'72%',borderBottomRightRadius:'24px'}}>
-                                <p style={{fontSize:'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px'}}>TRAINING</p>
+                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
+                                <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>TRAINING</p>
                             </div> 
                             <div style={{height:'100%'}}></div>
-                            <p style={{padding:'18px', fontSize:'1.1rem', fontWeight:'500',color:'white'}}>We provide in-house Avaloq training to upskill the bank’s developers with practical platform knowledge and best practices.</p>
+                            <p style={{padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We provide in-house Avaloq training to upskill the bank’s developers with practical platform knowledge and best practices.</p>
                         </div>
                     </div>
 
-                    <div className='service-3' style={{ width:'100%', height:'100%', marginLeft:'6px',marginRight:'6px'}}>
+                    <div className='service-3' style={{ width:'100%', height:'100%', marginLeft:'6px',marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
                         <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:'72%',borderBottomRightRadius:'24px'}}>
-                                <p style={{fontSize:'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px'}}>CUSTOMIZATION</p>
+                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
+                                <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CUSTOMIZATION</p>
                             </div> 
                             <div style={{height:'100%'}}></div>
-                            <p style={{padding:'18px', fontSize:'1.1rem', fontWeight:'500',color:'white'}}>We support Change the Bank through controlled Avaloq customizations and reliable project support aligned with platform standards.</p>
+                            <p style={{padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We support Change the Bank through controlled Avaloq customizations and reliable project support aligned with platform standards.</p>
                         </div>
                     </div>
 
-                    <div className='service-4' style={{ width:'100%', height:'100%', marginLeft:'6px'}}>
+                    <div className='service-4' style={{ width:'100%', height:'100%', marginLeft:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
                         <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:'72%',borderBottomRightRadius:'24px'}}>
-                                <p style={{fontSize:'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px'}}>MAINTENANCE</p>
+                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
+                                <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>MAINTENANCE</p>
                             </div> 
                             <div style={{height:'100%'}}></div>
-                            <p style={{padding:'18px', fontSize:'1.1rem', fontWeight:'500',color:'white'}}>We ensure stable Run the Bank operations through reliable Avaloq maintenance and ongoing end-user support.</p>
+                            <p style={{padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We ensure stable Run the Bank operations through reliable Avaloq maintenance and ongoing end-user support.</p>
                         </div>
                     </div>
 
