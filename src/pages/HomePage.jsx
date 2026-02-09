@@ -1,6 +1,7 @@
 
 import HeaderComponent from './HeaderComponent.jsx'
 import TileHeader from '../components/TileHeader.jsx'
+import FooterComponent from './FooterComponent.jsx'
 import AckLogoPng from '../assets/ack-logo.png'
 import VicentePort from '../assets/portraits/vicente-img-2b.png'
 import VicentePort2 from '../assets/portraits/vicente-img-2a.jpg'
@@ -34,7 +35,7 @@ function HomePage() {
     
   const isMobile = useMediaQuery({ maxWidth: 767 })
   return (
-   <div>
+   <div style={{}}>
         <HeaderComponent/>
         <div style={{position:'fixed',top:'0',backgroundColor:'green'}}>
             <Desktop>Desktop or laptop</Desktop>
@@ -238,9 +239,9 @@ function HomePage() {
                 </div>
              </div>
 
-            <div className='our-avq-streams-full' style={{height:'100vh',backgroundColor:'#cf1b39'}}>
-                <p style={{marginLeft:isMobile?'18px':'5vw', textAlign:isMobile?'center':'',paddingTop:'10vh',paddingBottom:'8px',fontSize:isMobile?'1.6rem':'2rem',color:'white'}}>Supported Avaloq Streams</p>
-                <div style={{padding:'5vh 5vw', display:'flex',justifyContent:'center',flexDirection: 'row', flexWrap: 'wrap',backgroundColor:'#ffeaea'}}>
+            <div className='our-avq-streams-full' style={{height:'100%'}}>
+                <p style={{paddingLeft:isMobile?'18px':'5vw', textAlign:isMobile?'center':'',backgroundColor:'#cf1b39',paddingTop:'10vh',paddingBottom:'8px',fontSize:isMobile?'1.6rem':'2rem',color:'white'}}>Supported Avaloq Streams</p>
+                <div style={{padding:'5vh 5vw', paddingTop:'6vw', paddingBottom:'5vw',display:'flex',justifyContent:'center',flexDirection: 'row', flexWrap: 'wrap',backgroundColor:'#ffeaea'}}>
                     <div className='scale-hover-2' style={{width:'200px',height:'200px', margin:'8px', borderRadius:'12px', overlow:'hidden',display: 'flex',flexDirection:'column'}}>
                         <div style={{ backgroundImage: "url(" + StreamInv + ")", backgroundSize:'contain', backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
                         <p style={{fontSize:'1.1rem',fontWeight:'500', lineHeight:'1.2rem', marginTop:'6px',padding:'4px',textAlign:'center',backgroundColor:'#cf1b39',color:'white'}}>
@@ -282,10 +283,16 @@ function HomePage() {
                             Migration​
                         </p>
                     </div>
+                     <p style={{backgroundColor:'#ffeaea',fontWeight:'400',fontSize:isMobile?'1rem':'1.2rem',color:'rgb(60,60,60)',textAlign:'center', paddingLeft:isMobile?'18px':'5vw',paddingRight:isMobile?'18px':'5vw',paddingTop:'18px'}}>
+                        We support a broad range of Avaloq streams, our engagement ensured end-to-end stability and consistency across front-to-back processes, enabling seamless transaction processing, secure system integration, and reliable data movement.
+                       {!isMobile&& <span> By addressing both functional and technical aspects of these streams, we helped banks maintain operational resilience while supporting ongoing change and regulatory demands.</span>}
+                        </p>
+               
 
                 </div>                   
             </div>
         </div>
+        <FooterComponent/>
    </div>
   );
 }
