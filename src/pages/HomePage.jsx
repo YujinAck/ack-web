@@ -14,13 +14,13 @@ import StreamIntf from '../assets/stream_icons/stream_interface.png'
 import StreamInv from '../assets/stream_icons/stream_investment.png'
 import StreamMigr from '../assets/stream_icons/stream_migration.png'
 import StreamSecu from '../assets/stream_icons/stream_secu.png'
-import MakatiCity1 from '../assets/makati-city-1.jpg'
 import MakatiCity2 from '../assets/makati-city-2b.jpg'
 import Services1 from '../assets/services/consulting-img-1.jpg'
 import Services2 from '../assets/services/training-img-1.jpg'
 import Services3 from '../assets/services/discuss-img-1.jpg'
 import Services4 from '../assets/services/maintain-img-1.jpg'
 import { useMediaQuery } from 'react-responsive'
+import Slideshow from '../components/Slideshow.jsx'
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 })
   return isDesktop ? children : null
@@ -43,24 +43,26 @@ function HomePage() {
   return (
    <div style={{}}>
         <HeaderComponent/>
-        <div style={{position:'fixed',top:'0',backgroundColor:'green'}}>
+        {/* <div style={{position:'fixed',top:'0',backgroundColor:'green'}}>
             <Desktop>Desktop or laptop</Desktop>
             <Tablet>Tablet</Tablet>
             <Mobile>Mobile</Mobile>
             <Default>Not mobile (desktop or laptop or tablet)</Default>
             <p>{"isMobile: " + isMobile}</p>
-        </div>
+        </div> */}
         <div style={{}}>
-            <div style={{height:'90vh',backgroundColor:'gray'}}></div>  {/* welcome photo, pics ng office, etc */}
+            <div className='slide-show-container' style={{height:'86vh',overflow:'hidden',backgroundColor:'#cf1b39'}}>
+                <Slideshow/>
+            </div> 
           
-            <div className='opening-slogan' style={{paddingTop:'24px',paddingBottom:'24px'}}>
+            <div className='opening-slogan' style={{paddingTop:'13vh',paddingBottom:'12vh'}}>
                 <div>
                     <h2 style={{fontWeight:'400', fontSize:isMobile?'1.2rem':'1.65rem',textAlign:'center',marginBottom:'0px'}}>From strategy to delivery - </h2>
                     <h2 style={{fontWeight:'300', fontSize:isMobile?'2.2rem':'3.2rem',textAlign:'center',marginTop:isMobile?'-10px':'-20px'}}>confidence in execution</h2>
                 </div>
             </div>
             
-            <div style={{backgroundColor:'#00004d',padding:'20px'}}></div>
+            <div style={{backgroundColor:'#cf1b39',padding:'12px',marginBottom:'10vh'}}></div>
 
             <div className='pic-show-grid' style={{display:'flex',height:isMobile?'60vh':'80vh'}}>
                 <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginRight:'2px'}}>
