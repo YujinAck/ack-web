@@ -3,6 +3,16 @@ import HeaderComponent from './HeaderComponent.jsx'
 import TileHeader from '../components/TileHeader.jsx'
 import AckLogoPng from '../assets/ack-logo.png'
 import VicentePort from '../assets/portraits/vicente-img-2b.png'
+import VicentePort2 from '../assets/portraits/vicente-img-2a.jpg'
+import ShowPic1 from '../assets/portraits/show-pic-1.jpg'
+import ShowPic2 from '../assets/portraits/show-pic-2.jpg'
+import ShowPic3 from '../assets/portraits/show-pic-3.jpg'
+import StreamCash from '../assets/stream_icons/stream_cash.png'
+import StreamCredit from '../assets/stream_icons/stream_credit.png'
+import StreamIntf from '../assets/stream_icons/stream_interface.png'
+import StreamInv from '../assets/stream_icons/stream_investment.png'
+import StreamMigr from '../assets/stream_icons/stream_migration.png'
+import StreamSecu from '../assets/stream_icons/stream_secu.png'
 import { useMediaQuery } from 'react-responsive'
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 })
@@ -45,17 +55,25 @@ function HomePage() {
             
             <div style={{backgroundColor:'#00004d',padding:'20px'}}></div>
 
-            <div className='pic-show-grid' style={{display:'flex',height:'80vh'}}>
-                <div style={{backgroundColor:'blue', width:'100%', height:'100%', marginRight:'2px'}}> </div>
-                <div style={{backgroundColor:'green', width:'100%', height:'100%', marginRight:'2px',marginLeft:'2px'}}> </div>
-                <div style={{backgroundColor:'orange', width:'100%', height:'100%', marginRight:'2px',marginLeft:'2px'}}> </div>
-                <div style={{backgroundColor:'magenta', width:'100%', height:'100%',marginLeft:'2px'}}> </div>
+            <div className='pic-show-grid' style={{display:'flex',height:isMobile?'60vh':'80vh'}}>
+                <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginRight:'2px'}}>
+                    <div style={{ backgroundImage: "url(" + VicentePort2 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                </div>
+                <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginRight:'2px',marginLeft:'2px'}}>
+                    <div style={{ backgroundImage: "url(" + ShowPic2 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                </div>
+                <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginRight:'2px',marginLeft:'2px'}}>
+                    <div style={{ backgroundImage: "url(" + ShowPic3 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                </div>
+                <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginLeft:'2px'}}>
+                    <div style={{ backgroundImage: "url(" + ShowPic1 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                </div>
             </div>
 
             <div style={{paddingLeft:isMobile?'18px':'10vw',marginBottom:'12vw',display:'flex'}}>
-                <div style={{width:'55%',paddingTop:'14vh'}}>
-                    <p style={{width:'80%', fontSize:'2rem',fontWeight:'420',lineHeight: '2rem'}}>Delivering trusted, reliable services for secure and efficient operations.</p>
-                    <p style={{fontSize:'1.1rem',fontWeight:'360',marginTop:'12px'}}>Driving competitiveness, operational efficiency, and superior client experience in providing Avaloq services.</p>
+                <div style={{width:isMobile?'90%':'55%',paddingTop:'14vh'}}>
+                    <p style={{width:'80%', fontSize:isMobile?'1.4rem':'2rem',fontWeight:isMobile?'480':'420',lineHeight: '2rem'}}>Delivering trusted, reliable services for secure and efficient operations.</p>
+                    <p style={{fontSize:isMobile?'0.85rem':'1.1rem',fontWeight:'360',marginTop:'12px'}}>Driving competitiveness, operational efficiency, and superior client experience in providing Avaloq services.</p>
                 </div>
                  <div style={{width:'45%',height:'300px',marginRight:'5vw'}}>
                      <img src={AckLogoPng} alt="ACK LOGO ICON" style={{ marginTop:'44px',width: '100%', height: '100%', objectFit:'contain' }} />
@@ -134,14 +152,14 @@ function HomePage() {
 
              <div className='testi-full-page1' style={{ minHeight:'800px', backgroundSize: 'cover',backgroundImage: "url(" + VicentePort + ")"}}>
                 <div style={{ paddingTop:'16vh',paddingBottom:'8vh'}}>
-                    <div  style={{backgroundColor:'#f6f7f8', borderTopRightRadius:'18px',borderBottomRightRadius:'18px',width:isMobile?'100vw':'52vw',minWidth:'500px', height:'100%'}}>
+                    <div  style={{backgroundColor:'#f6f7f8', borderTopRightRadius:'18px',borderBottomRightRadius:'18px',width:isMobile?'95vw':'52vw',minWidth:isMobile?'':'500px', height:'100%'}}>
                         <div style={{padding:'4vw'}}>
                             <p style={{fontWeight:'500',fontSize:isMobile?'1.2rem':'1.5rem',color:'#cf1b39'}}>Why ACK Solutions Inc.</p>
                             <p style={{fontWeight:'700',fontSize:isMobile?'2rem':'2.5rem',color:'#cf1b39'}}>From strategy to delivery</p>
                             <p style={{fontWeight:'400',fontSize:isMobile?'1rem':'1.2rem',color:'rgb(60,60,60)',marginTop:'2vw'}}>ACK Solutions Inc. empowers organizations to move faster and deliver with confidence by reinforcing teams with highly experienced Avaloq specialists. We help teams achieve more by applying smart, efficient approaches that drive consistent, high-quality outcomes. Choosing ACK Solutions means gaining a reliable partner committed to performance, quality, and sustainable growth.</p>
 
                             <div style={{display:'flex',marginTop:'4vw'}}>
-                                <div className='ack-a scale-hover-0' style={{margin:'6px', backgroundColor:'white',width:'100%',borderRadius:'10px',maxWidth:'220px',padding:'16px'}}>
+                                <div className='ack-a scale-hover-0' style={{margin:'6px', backgroundColor:'white',width:'100%',borderRadius:'10px',maxWidth:'220px',padding:isMobile?'8px':'16px'}}>
                                     <p style={{fontSize:'1.2rem',fontWeight:'500',marginBottom:'6px'}}>
                                         <span style={{color:'#cf1b39',fontWeight:'600',fontSize:'1.8rem'}}>A</span>
                                         <span>ccelerate</span>
@@ -149,7 +167,7 @@ function HomePage() {
                                     <p style={{fontSize:'0.75rem',fontWeight:'500',color:'rgb(60,60,60)'}}>Enables your team by bringing in expertise provided by seasoned Avaloq professionals.</p>
                                 </div>
 
-                                <div className='ack-b scale-hover-0' style={{margin:'6px',backgroundColor:'white',width:'100%',borderRadius:'10px',maxWidth:'220px',padding:'16px'}}>
+                                <div className='ack-b scale-hover-0' style={{margin:'6px',backgroundColor:'white',width:'100%',borderRadius:'10px',maxWidth:'220px',padding:isMobile?'8px':'16px'}}>
                                     <p style={{fontSize:'1.2rem',fontWeight:'500',marginBottom:'6px'}}>
                                         <span style={{color:'#cf1b39',fontWeight:'600',fontSize:'1.8rem'}}>C</span>
                                         <span>omplete</span>
@@ -157,7 +175,7 @@ function HomePage() {
                                     <p style={{fontSize:'0.75rem',fontWeight:'500',color:'rgb(60,60,60)'}}>Accomplish more by ensuring deliverables are in good quality through efficient solutioning.</p>
                                 </div>
 
-                                <div className='ack-c scale-hover-0' style={{margin:'6px',backgroundColor:'white',width:'100%',borderRadius:'10px',maxWidth:'220px',padding:'16px'}}>
+                                <div className='ack-c scale-hover-0' style={{margin:'6px',backgroundColor:'white',width:'100%',borderRadius:'10px',maxWidth:'220px',padding:isMobile?'8px':'16px'}}>
                                     <p style={{fontSize:'1.2rem',fontWeight:'500',marginBottom:'6px'}}>
                                         <span style={{color:'#cf1b39',fontWeight:'700',fontSize:'1.8rem'}}>K</span>
                                         <span>ick Start</span>
@@ -172,12 +190,12 @@ function HomePage() {
              </div>
 
 
-             <div className='services-offered-full-page'  style={{height:'100vh', minHeight:isMobile?'70vh':'800px', backgroundColor:'#f7f7f7',marginBottom:'6vh'}}>
+             <div className='services-offered-full-page'  style={{height:'100%', minHeight:isMobile?'60vh':'800px', backgroundColor:'#f7f7f7',paddingBottom:'6vh'}}>
                 <p style={{fontSize:isMobile?'1.9rem':'2.3rem',fontWeight:'700',textAlign:'center',paddingTop:'8vh',color:'#3a4149'}}>Avaloq Services offered</p>
                 <p style={{ textAlign:'center', paddingLeft:'10vw', paddingBottom:'5vh', paddingRight:'10vw',fontWeight:'400',fontSize:isMobile?'1rem':'1.2rem',color:'rgb(60,60,60)'}}>We deliver comprehensive services covering consulting, training, customization, and ongoing maintenance. Our experts help organizations design the right solutions, build capable teams, tailor Avaloq to business needs, and ensure long-term platform stability.</p>
-                <div className='show-grid' style={{display:'flex', minHeight:isMobile?'80vh':'', flexDirection: 'row', flexWrap: 'wrap',height:isMobile?'80%':'70%', justifyContent:'center', paddingLeft:isMobile?'12px':'6vw',paddingRight:isMobile?'12px':'6vw'}}>
+                <div className='show-grid' style={{display:'flex', justifyContent:'center', minHeight:isMobile?'80vh':'100%', flexDirection: 'row', flexWrap: 'wrap',height:isMobile?'80%':'70%', justifyContent:'center', paddingLeft:isMobile?'12px':'6vw',paddingRight:isMobile?'12px':'6vw'}}>
                    
-                    <div className='service-1' style={{ width:'100%', height:'100%', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
+                    <div className='service-1' style={{ width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
                         <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
                             <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CONSULTING</p>
@@ -187,7 +205,7 @@ function HomePage() {
                         </div>
                     </div>
 
-                    <div className='service-2' style={{ width:'100%', height:'100%', marginLeft:'6px',marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
+                    <div className='service-2' style={{ width:'100%',height:'60vh',minHeight:isMobile?'60vh':'500px', marginLeft:'6px',marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
                         <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
                             <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>TRAINING</p>
@@ -197,7 +215,7 @@ function HomePage() {
                         </div>
                     </div>
 
-                    <div className='service-3' style={{ width:'100%', height:'100%', marginLeft:'6px',marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
+                    <div className='service-3' style={{ width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginLeft:'6px',marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
                         <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
                             <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CUSTOMIZATION</p>
@@ -207,7 +225,7 @@ function HomePage() {
                         </div>
                     </div>
 
-                    <div className='service-4' style={{ width:'100%', height:'100%', marginLeft:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
+                    <div className='service-4' style={{ width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginLeft:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
                         <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
                             <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>MAINTENANCE</p>
@@ -219,6 +237,54 @@ function HomePage() {
 
                 </div>
              </div>
+
+            <div className='our-avq-streams-full' style={{height:'100vh',backgroundColor:'#cf1b39'}}>
+                <p style={{marginLeft:isMobile?'18px':'5vw', textAlign:isMobile?'center':'',paddingTop:'10vh',paddingBottom:'8px',fontSize:isMobile?'1.6rem':'2rem',color:'white'}}>Supported Avaloq Streams</p>
+                <div style={{padding:'5vh 5vw', display:'flex',justifyContent:'center',flexDirection: 'row', flexWrap: 'wrap',backgroundColor:'#ffeaea'}}>
+                    <div className='scale-hover-2' style={{width:'200px',height:'200px', margin:'8px', borderRadius:'12px', overlow:'hidden',display: 'flex',flexDirection:'column'}}>
+                        <div style={{ backgroundImage: "url(" + StreamInv + ")", backgroundSize:'contain', backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                        <p style={{fontSize:'1.1rem',fontWeight:'500', lineHeight:'1.2rem', marginTop:'6px',padding:'4px',textAlign:'center',backgroundColor:'#cf1b39',color:'white'}}>
+                             Investment Related Transactions​
+                        </p>
+                    </div>
+
+                    <div className='scale-hover-2' style={{width:'200px',height:'200px', cursor:'pointer', margin:'8px', borderRadius:'12px', overlow:'hidden',display: 'flex',flexDirection:'column'}}>
+                        <div style={{ backgroundImage: "url(" + StreamCash + ")", backgroundSize:'contain', backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                        <p style={{fontSize:'1.1rem',fontWeight:'500',lineHeight:'1.2rem',marginTop:'6px',padding:'4px',textAlign:'center',backgroundColor:'#cf1b39',color:'white'}}>
+                             Cash Related Transaction​
+                        </p>
+                    </div>
+
+                    <div className='scale-hover-2' style={{width:'200px',height:'200px', cursor:'pointer', margin:'8px', borderRadius:'12px', overlow:'hidden',display: 'flex',flexDirection:'column'}}>
+                        <div style={{ backgroundImage: "url(" + StreamCredit + ")", backgroundSize:'contain', backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                        <p style={{fontSize:'1.1rem',fontWeight:'500',marginTop:'6px',padding:'4px',textAlign:'center',backgroundColor:'#cf1b39',color:'white'}}>
+                            Credit
+                        </p>
+                    </div>
+
+                    <div className='scale-hover-2' style={{width:'200px',height:'200px', cursor:'pointer', margin:'8px', borderRadius:'12px', overlow:'hidden',display: 'flex',flexDirection:'column'}}>
+                        <div style={{ backgroundImage: "url(" + StreamIntf + ")", backgroundSize:'contain', backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                        <p style={{fontSize:'1.1rem',fontWeight:'500',marginTop:'6px',padding:'4px',textAlign:'center',backgroundColor:'#cf1b39',color:'white'}}>
+                            Interfaces​
+                        </p>
+                    </div>
+
+                    <div className='scale-hover-2' style={{width:'200px',height:'200px', cursor:'pointer', margin:'8px', borderRadius:'12px', overlow:'hidden',display: 'flex',flexDirection:'column'}}>
+                        <div style={{ backgroundImage: "url(" + StreamSecu + ")", backgroundSize:'contain', backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                        <p style={{fontSize:'1.1rem',fontWeight:'500',marginTop:'6px',padding:'4px',textAlign:'center',backgroundColor:'#cf1b39',color:'white'}}>
+                            Security​
+                        </p>
+                    </div>
+
+                    <div className='scale-hover-2' style={{width:'200px',height:'200px', cursor:'pointer', margin:'8px', borderRadius:'12px', overlow:'hidden',display: 'flex',flexDirection:'column'}}>
+                        <div style={{ backgroundImage: "url(" + StreamMigr + ")", backgroundSize:'contain', backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                        <p style={{fontSize:'1.1rem',fontWeight:'500',marginTop:'6px',padding:'4px',textAlign:'center',backgroundColor:'#cf1b39',color:'white'}}>
+                            Migration​
+                        </p>
+                    </div>
+
+                </div>                   
+            </div>
         </div>
    </div>
   );
