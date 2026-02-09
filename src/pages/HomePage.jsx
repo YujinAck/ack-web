@@ -14,6 +14,12 @@ import StreamIntf from '../assets/stream_icons/stream_interface.png'
 import StreamInv from '../assets/stream_icons/stream_investment.png'
 import StreamMigr from '../assets/stream_icons/stream_migration.png'
 import StreamSecu from '../assets/stream_icons/stream_secu.png'
+import MakatiCity1 from '../assets/makati-city-1.jpg'
+import MakatiCity2 from '../assets/makati-city-2b.jpg'
+import Services1 from '../assets/services/consulting-img-1.jpg'
+import Services2 from '../assets/services/training-img-1.jpg'
+import Services3 from '../assets/services/discuss-img-1.jpg'
+import Services4 from '../assets/services/maintain-img-1.jpg'
 import { useMediaQuery } from 'react-responsive'
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 })
@@ -151,7 +157,7 @@ function HomePage() {
              </div> */}
 
 
-             <div className='testi-full-page1' style={{ minHeight:'800px', backgroundSize: 'cover',backgroundImage: "url(" + VicentePort + ")"}}>
+             <div className='testi-full-page1' style={{ minHeight:'800px',backgroundSize: 'cover', backgroundImage: "url(" + MakatiCity2 + ")"}}>
                 <div style={{ paddingTop:'16vh',paddingBottom:'8vh'}}>
                     <div  style={{backgroundColor:'#f6f7f8', borderTopRightRadius:'18px',borderBottomRightRadius:'18px',width:isMobile?'95vw':'52vw',minWidth:isMobile?'':'500px', height:'100%'}}>
                         <div style={{padding:'4vw'}}>
@@ -196,43 +202,47 @@ function HomePage() {
                 <p style={{ textAlign:'center', paddingLeft:'10vw', paddingBottom:'5vh', paddingRight:'10vw',fontWeight:'400',fontSize:isMobile?'1rem':'1.2rem',color:'rgb(60,60,60)'}}>We deliver comprehensive services covering consulting, training, customization, and ongoing maintenance. Our experts help organizations design the right solutions, build capable teams, tailor Avaloq to business needs, and ensure long-term platform stability.</p>
                 <div className='show-grid' style={{display:'flex', justifyContent:'center', minHeight:isMobile?'80vh':'100%', flexDirection: 'row', flexWrap: 'wrap',height:isMobile?'80%':'70%', justifyContent:'center', paddingLeft:isMobile?'12px':'6vw',paddingRight:isMobile?'12px':'6vw'}}>
                    
-                    <div className='service-1' style={{ width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
-                        <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
+                    <div className='service-1' style={{ position:'relative ', width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
+                        <div style={{backgroundColor:'#770619',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
+                            <div style={{width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + Services1 + ")",}}></div>
+                            <div style={{backgroundColor:'#cf1b39',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CONSULTING</p>
                             </div> 
                             <div style={{height:'100%'}}></div>
-                            <p style={{padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We analyze and design business requirements into effective, technology-driven solutions.</p>
+                            <p style={{zIndex:2,padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We analyze and design business requirements into effective, technology-driven solutions.</p>
                         </div>
                     </div>
 
-                    <div className='service-2' style={{ width:'100%',height:'60vh',minHeight:isMobile?'60vh':'500px', marginLeft:'6px',marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
-                        <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
+                    <div className='service-2' style={{ position:'relative ', width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
+                        <div style={{backgroundColor:'#770619',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
+                            <div style={{backgroundImage: "url(" + Services2 + ")",width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundColor:'#cf1b39',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>TRAINING</p>
                             </div> 
                             <div style={{height:'100%'}}></div>
-                            <p style={{padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We provide in-house Avaloq training to upskill the bank’s developers with practical platform knowledge and best practices.</p>
+                            <p style={{zIndex:2,padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We provide in-house Avaloq training to upskill the bank’s developers with practical platform knowledge and best practices.</p>
                         </div>
                     </div>
 
-                    <div className='service-3' style={{ width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginLeft:'6px',marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
-                        <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
+                    <div className='service-3' style={{ position:'relative ', width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
+                        <div style={{backgroundColor:'#770619',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
+                            <div style={{backgroundImage: "url(" + Services3 + ")",width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundColor:'#cf1b39',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CUSTOMIZATION</p>
                             </div> 
                             <div style={{height:'100%'}}></div>
-                            <p style={{padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We support Change the Bank through controlled Avaloq customizations and reliable project support aligned with platform standards.</p>
+                            <p style={{zIndex:2,padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We support Change the Bank through controlled Avaloq customizations and reliable project support aligned with platform standards.</p>
                         </div>
                     </div>
 
-                    <div className='service-4' style={{ width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginLeft:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px'}}>
-                        <div style={{backgroundColor:'gainsboro', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + VicentePort + ")",borderRadius:'24px',width:'100%',height:'100%',overflow:'hidden', display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundColor:'#cf1b39',padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
+                    <div className='service-4' style={{ position:'relative ', width:'100%', height:'60vh',minHeight:isMobile?'60vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
+                        <div style={{backgroundColor:'#770619',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
+                            <div style={{backgroundImage: "url(" + Services4 + ")",width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundColor:'#cf1b39',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>MAINTENANCE</p>
                             </div> 
                             <div style={{height:'100%'}}></div>
-                            <p style={{padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We ensure stable Run the Bank operations through reliable Avaloq maintenance and ongoing end-user support.</p>
+                            <p style={{zIndex:2,padding:isMobile?'12px':'18px', fontSize:isMobile?'1rem':'1.1rem', fontWeight:'500',color:'white'}}>We ensure stable Run the Bank operations through reliable Avaloq maintenance and ongoing end-user support.</p>
                         </div>
                     </div>
 
