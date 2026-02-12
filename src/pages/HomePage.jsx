@@ -1,5 +1,6 @@
 
 import HeaderComponent from './HeaderComponent.jsx'
+import ActionButton from '../components/ActionButton.jsx'
 import TileHeader from '../components/TileHeader.jsx'
 import FooterComponent from './FooterComponent.jsx'
 import AckLogoPng from '../assets/ack-logo.png'
@@ -19,6 +20,9 @@ import Services1 from '../assets/services/consulting-img-1.jpg'
 import Services2 from '../assets/services/training-img-1.jpg'
 import Services3 from '../assets/services/discuss-img-1.jpg'
 import Services4 from '../assets/services/maintain-img-1.jpg'
+import LineEffect1 from '../assets/others/line-effect-1.png'
+import LineEffect2 from '../assets/others/line-effect-2.png'
+import LineEffect3 from '../assets/others/line-effect-3.png'
 import { useMediaQuery } from 'react-responsive'
 import Slideshow from '../components/Slideshow.jsx'
 const Desktop = ({ children }) => {
@@ -41,7 +45,7 @@ function HomePage() {
     
   const isMobile = useMediaQuery({ maxWidth: 767 })
   return (
-   <div style={{}}>
+   <div style={{backgroundColor:'#f5f5f5'}}>
         <HeaderComponent/>
         {/* <div style={{position:'fixed',top:'0',backgroundColor:'green'}}>
             <Desktop>Desktop or laptop</Desktop>
@@ -79,7 +83,7 @@ function HomePage() {
                 </div>
             </div>
 
-            <div style={{paddingLeft:isMobile?'18px':'10vw',marginBottom:'12vw',display:'flex'}}>
+            <div style={{paddingLeft:isMobile?'18px':'10vw',marginBottom:isMobile?'3vh':'8vw',display:'flex'}}>
                 <div style={{width:isMobile?'90%':'55%',paddingTop:isMobile?'8vh':'14vh'}}>
                     <p style={{width:'80%', fontSize:isMobile?'1.4rem':'2rem',fontWeight:isMobile?'480':'420',lineHeight: isMobile?'1.4rem':'2rem'}}>Delivering trusted, reliable services for secure and efficient operations.</p>
                     <p style={{fontSize:isMobile?'0.85rem':'1.1rem', fontWeight:'360',marginTop:'12px'}}>Driving competitiveness, operational efficiency, and superior client experience in providing Avaloq services.</p>
@@ -89,9 +93,14 @@ function HomePage() {
                 </div>
              </div>
 
-             <div className='success-hist' style={{backgroundColor:'#ce1a38'}}>
+             <div className='success-hist' style={{}}>
                 <div>
-                    <p style={{marginLeft:isMobile?'18px':'5vw', textAlign:isMobile?'center':'',paddingTop:'10vh',paddingBottom:'8px',fontSize:isMobile?'1.6rem':'2rem',color:'white'}}>Our Project Success History</p>
+                    <div style={{backgroundColor:'#ce1a38',position:'relative'}}>
+                        <div style={{display:'flex',position:'absolute', pointerEvents:'none',width:'100%',height:'100%',justifyContent:'flex-end' }}>
+                            <img src={LineEffect2} alt="fade" style={{float: 'right', objectFit:'contain'}} />
+                        </div>
+                        <p style={{marginLeft:isMobile?'18px':'5vw', textAlign:isMobile?'center':'',paddingTop:'10vh',paddingBottom:'8px',fontSize:isMobile?'1.6rem':'2rem',color:'white'}}>Our Project Success History</p>
+                    </div>
                     <div style={{paddingTop:'4vw',paddingBottom:'6vh',paddingLeft:'5vw', paddingRight:'5vw',backgroundColor:'rgb(255, 234, 234)'}}>
                         <div className='success-show' style={{display:'flex', flexDirection: 'row', flexWrap: 'wrap',gap:'1rem', justifyContent:'center', width:'100%',alignContent:'center'}}>
                             <TileHeader title='Indonesian Bank'
@@ -266,7 +275,12 @@ function HomePage() {
              </div>
 
             <div className='our-avq-streams-full' style={{height:'100%'}}>
-                <p style={{paddingLeft:isMobile?'18px':'5vw', textAlign:isMobile?'center':'',backgroundColor:'#cf1b39',paddingTop:'10vh',paddingBottom:'8px',fontSize:isMobile?'1.6rem':'2rem',color:'white'}}>Supported Avaloq Streams</p>
+                <div style={{backgroundColor:'#cf1b39',position:'relative'}}>
+                    <div style={{display:'flex',position:'absolute',pointerEvents:'none',width:'100%',height:'100%',justifyContent:'flex-end' }}>
+                        <img src={LineEffect3} alt="fade" style={{float: 'right', objectFit:'contain'}} />
+                    </div>
+                    <p style={{paddingLeft:isMobile?'18px':'5vw', textAlign:isMobile?'center':'',paddingTop:'10vh',paddingBottom:'8px',fontSize:isMobile?'1.6rem':'2rem',color:'white'}}>Supported Avaloq Streams</p>
+               </div>         
                 <div style={{padding:'5vh 5vw', paddingTop:'6vw', paddingBottom:'5vw',display:'flex',justifyContent:'center',flexDirection: 'row', flexWrap: 'wrap',backgroundColor:'#ffeaea'}}>
                     <div className='scale-hover-2' style={{width:isMobile?'40vw':'200px',height:'200px', margin:'8px', borderRadius:'12px', overlow:'hidden',display: 'flex',flexDirection:'column'}}>
                         <div style={{ backgroundImage: "url(" + StreamInv + ")", backgroundSize:'contain', backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
@@ -316,6 +330,20 @@ function HomePage() {
                
 
                 </div>                   
+            </div>
+
+            <div className='footer-msg-careers' style={{padding:'5vw'}}>
+                <div style={{position:'relative', backgroundColor:'#cf1b39',borderRadius:'18px'}}>
+                    <div style={{display:'flex',position:'absolute',width:'100%',height:'100%',pointerEvents:'none', justifyContent:'flex-end',zIndex:0 }}>
+                        <img src={LineEffect1} alt="fade" style={{float: 'right', objectFit:'contain'}} />
+                    </div>
+                     <div style={{padding:'42px 8vw',zIndex:4}}>
+                        <p style={{fontSize:'1.3rem',fontWeight:'500',color:'white'}}>Are you ready to take the leap</p>
+                        <p style={{fontSize:'1rem',fontWeight:'400',color:'white',opacity:'0.85'}}>Step forward with confidence and explore opportunities that challenge and inspire you to grow.</p>
+                        <br/>                  
+                        <ActionButton title='Apply now' type='white' to='/careers'/>
+                    </div>
+                </div>
             </div>
         </div>
         <FooterComponent/>

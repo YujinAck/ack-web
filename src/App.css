@@ -78,3 +78,23 @@
 .ft-underline-link:hover{
   text-decoration: underline;
 }
+
+.action-btn{
+  background-color: #dc092d;
+  cursor: pointer;
+  padding:6px 22px;
+  border-radius: 6px;
+  color:white;
+  font-weight: 400;
+  transition: 0.2s;
+}
+.action-btn-w{
+  background-color: #fff8f9;
+  color:black;
+}
+.action-btn-w:hover{
+  background-color: #ffdcdc !important;
+}
+.action-btn:hover{
+  background-color: #b6132e;
+}
