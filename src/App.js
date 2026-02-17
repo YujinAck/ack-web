@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage.jsx';
 import CareersOverviewPage from './pages/CareersOverviewPage.jsx';
 import SolutionsPage from './pages/SolutionsPage.jsx';
 import ClientsPage from './pages/ClientsPage.jsx';
+import LeadershipPage from './pages/LeadershipPage.jsx';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/careers" element={<CareersOverviewPage />} />
       <Route path="/solutions" element={<SolutionsPage />} />
       <Route path="/about/clients" element={<ClientsPage />} />
+      <Route path="/about/leadership" element={<LeadershipPage />} />
       
       {/* <Route path="/about" element={<About />} /> */}
     </Routes>
