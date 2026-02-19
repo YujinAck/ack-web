@@ -36,13 +36,13 @@ export default function FooterComponent({}){
                     <p style={{fontSize:'1.2rem',fontWeight:'400',color:'white',opacity:'0.6'}}>About</p>
                     <Link to="/about/clients">      <p className='footer-link'>Clients</p></Link>
                     <Link to="/about/leadership">   <p className='footer-link'>Leadership</p></Link>
-                    <Link to="/blogs">              <p className='footer-link'>Blogs</p></Link>
+                    {/* <Link to="/blogs">              <p className='footer-link'>Blogs</p></Link> */}
                 </div>
                 
                 <div style={{width:'100%',maxWidth:isMobile?'':'200px'}}>
                     <p style={{fontSize:'1.2rem',fontWeight:'400',color:'white',opacity:'0.6'}}>Careers</p>
                     <Link to="/careers"> <p className='footer-link'>Overview</p></Link>
-                    <Link to="/job-openings"> <p className='footer-link'>Job openings</p></Link>
+                    {/* <Link to="/job-openings"> <p className='footer-link'>Job openings</p></Link> */}
                 </div>
             </div>
         </div>

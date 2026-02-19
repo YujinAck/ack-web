@@ -42,6 +42,14 @@
   scale: 1.03;
   transition: 0.15s;
 }
+.hdr-1{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.hdr-2{
+  font-size: 1.1rem;
+  font-weight: 500;
+}
 
 .footer-link{
   color:white;
