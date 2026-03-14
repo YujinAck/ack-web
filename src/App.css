@@ -13,17 +13,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +24,85 @@
   to {
     transform: rotate(360deg);
   }
+}
+*div{
+
+  box-sizing: border-box;
+}
+
+.scale-hover-0:hover{
+  scale: 1.05;
+  transition: 0.3s;
+}
+.scale-hover-1:hover{
+  scale: 1.1;
+  transition: 0.3s;
+}
+.scale-hover-2:hover{
+  scale: 1.03;
+  transition: 0.15s;
+}
+.hdr-1{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.hdr-2{
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.footer-link{
+  color:white;
+  opacity: 0.9;
+  margin-bottom: 6px;
+  margin-top: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: fit-content;
+  padding-right: 12px;
+}
+.footer-link:hover{
+  opacity: 1;
+  transition: 0.1s;
+  font-weight: 600;
+  color: #4e0914;
+}
+.ft-underline-link{
+  color:white;
+  margin-bottom: 6px;
+  margin-top: 4px;
+  margin-right: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: fit-content;
+  padding-right: 12px;
+  padding-left: 6px;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  font-weight: 500;
+  min-width: fit-content;
+}
+
+.ft-underline-link:hover{
+  text-decoration: underline;
+}
+
+.action-btn{
+  background-color: #dc092d;
+  cursor: pointer;
+  padding:6px 22px;
+  border-radius: 6px;
+  color:white;
+  font-weight: 400;
+  transition: 0.2s;
+}
+.action-btn-w{
+  background-color: #fff8f9;
+  color:black;
+}
+.action-btn-w:hover{
+  background-color: #ffdcdc !important;
+}
+.action-btn:hover{
+  background-color: #b6132e;
 }
