@@ -8,7 +8,8 @@ import VicentePort from '../assets/portraits/vicente-img-2b.png'
 import VicentePort2 from '../assets/portraits/vicente-img-2a.jpg'
 import ShowPic1 from '../assets/portraits/show-pic-1.jpg'
 import ShowPic2 from '../assets/portraits/show-pic-2.jpg'
-import ShowPic3 from '../assets/portraits/show-pic-3.jpg'
+import ShowPic7 from '../assets/portraits/show-pic-7.jpg'
+import ShowPic4 from '../assets/portraits/show-pic-4.jpg'
 import StreamCash from '../assets/stream_icons/stream_cash.png'
 import StreamCredit from '../assets/stream_icons/stream_credit.png'
 import StreamIntf from '../assets/stream_icons/stream_interface.png'
@@ -70,16 +71,16 @@ function HomePage() {
 
             <div className='pic-show-grid' style={{display:'flex',height:isMobile?'60vh':'80vh'}}>
                 <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginRight:'2px'}}>
-                    <div style={{ backgroundImage: "url(" + VicentePort2 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                    <div style={{ backgroundImage: "url(" + ShowPic4 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
                 </div>
                 <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginRight:'2px',marginLeft:'2px'}}>
                     <div style={{ backgroundImage: "url(" + ShowPic2 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
                 </div>
                 <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginRight:'2px',marginLeft:'2px'}}>
-                    <div style={{ backgroundImage: "url(" + ShowPic3 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                    <div style={{ backgroundImage: "url(" + ShowPic1 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
                 </div>
                 <div style={{ backgroundColor:'#ce1a38',width:'100%',height:'100%',marginLeft:'2px'}}>
-                    <div style={{ backgroundImage: "url(" + ShowPic1 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
+                    <div style={{ backgroundImage: "url(" + ShowPic7 + ")", opacity:'0.68', backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'100%'}}></div>
                 </div>
             </div>
 
