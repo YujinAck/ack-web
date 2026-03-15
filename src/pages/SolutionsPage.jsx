@@ -1,28 +1,17 @@
-
-import React, { useRef } from 'react';
 import FooterComponent from './FooterComponent.jsx';
-import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 import HeaderComponent from './HeaderComponent.jsx'
-import AckLogo from '../assets/ack-logo.png'
 import AckLogoWhite from '../assets/ack-logo-white.png'
 import ActionButton from '../components/ActionButton.jsx'
 import ManilaBldg1 from '../assets/manila-bldg-1.png'
-import CollabImg1 from '../assets/others/collab-img-1.jpg'
-import LightBulb1 from '../assets/others/lightbulb-img-1.png'
-import OfficeTeam1 from '../assets/others/office-team-1.jpg'
-import FadeRed1 from '../assets/fades/fade-red-1.png'
-import FadeRed2 from '../assets/fades/fade-red-2.png'
-import FadeRed3 from '../assets/fades/fade-red-3.png'
 import FadeRed4 from '../assets/fades/fade-red-4.png'
-import Maroon1 from '../assets/fades/fade-maroon-1.png'
 import Services1 from '../assets/services/consulting-img-1.jpg'
 import Services2 from '../assets/services/training-img-1.jpg'
 import Services3 from '../assets/services/discuss-img-1.jpg'
 import Services4 from '../assets/services/maintain-img-1.jpg'
 
 import LineEffect3 from '../assets/others/line-effect-3.png'
-export default function SolutionsPage({}){
+export default function SolutionsPage(){
   const isMobile = useMediaQuery({ maxWidth: 767 })
   return (
    <div className='careers-overview-page'  style={{backgroundColor:'#f5f5f5',minHeight:'100vh'}}>
@@ -32,7 +21,7 @@ export default function SolutionsPage({}){
             <div style={{width:'100%',paddingRight:'5vw',paddingLeft:'5vw',paddingTop:'',textAlign:'right',paddingBottom:isMobile?'4vh':''}}>
                   <div style={{display:'flex',flexDirection:'column',height:'100%',justifyContent:'center'}}>
                       <p style={{fontSize:isMobile?'2rem':'2.6rem',fontWeight:'400',paddingTop:'8vh',color:'white'}}>From strategy to delivery</p>
-                      <p style={{fontSize:'1.2rem',fontWeight:'400',lineHeight:'1.5rem', color:'rgb(64, 64, 64)',marginTop:'12px',color:'white'}}>ACK Solutions Inc. empowers organizations to move faster and deliver with confidence by reinforcing teams with highly experienced Avaloq specialists. Choosing ACK Solutions means gaining a reliable partner committed to performance, quality, and sustainable growth.</p>         
+                      <p style={{fontSize:'1.2rem',fontWeight:'400',lineHeight:'1.5rem',marginTop:'12px',color:'white'}}>ACK Solutions Inc. empowers organizations to move faster and deliver with confidence by reinforcing teams with highly experienced Avaloq specialists. Choosing ACK Solutions means gaining a reliable partner committed to performance, quality, and sustainable growth.</p>         
                   </div>
                 </div>
                {!isMobile&&<div style={{width:'100%'}}>
@@ -79,11 +68,11 @@ export default function SolutionsPage({}){
             <div style={{}}>
               <p style={{ textAlign:'center',  paddingBottom:'10vh', paddingTop:'2vh',paddingRight:'10vw',paddingLeft:'10vw',fontWeight:'400',fontSize:isMobile?'1rem':'1.2rem',color:'rgb(60,60,60)'}}>We deliver comprehensive services covering consulting, training, customization, and ongoing maintenance. Our experts help organizations design the right solutions, build capable teams, tailor Avaloq to business needs, and ensure long-term platform stability.</p>
             </div>
-           <div className='show-grid' style={{display:'flex', justifyContent:'center', minHeight:isMobile?'80vh':'100%', flexDirection: 'row', flexWrap: 'wrap',height:isMobile?'80%':'70%', justifyContent:'center', paddingLeft:isMobile?'12px':'6vw',paddingRight:isMobile?'12px':'6vw'}}>
+           <div className='show-grid' style={{display:'flex',  minHeight:isMobile?'80vh':'100%', flexDirection: 'row', flexWrap: 'wrap',height:isMobile?'80%':'70%', justifyContent:'center', paddingLeft:isMobile?'12px':'6vw',paddingRight:isMobile?'12px':'6vw'}}>
                    
                     <div className='service-1' style={{ position:'relative ', width:'100%', height:isMobile?'40vh':'60vh',minHeight:isMobile?'40vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
                         <div style={{backgroundColor:'#cf1b39',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
-                            <div style={{width:'100%',height:'100%',opacity:'0.8', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + Services1 + ")",}}></div>
+                            <div style={{width:'100%',height:'100%',opacity:'0.8', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + Services1 + ")",}}></div>
                             <div style={{backgroundColor:'#731d2b',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CONSULTING</p>
                             </div> 
@@ -94,7 +83,7 @@ export default function SolutionsPage({}){
 
                     <div className='service-2' style={{ position:'relative ', width:'100%', height:isMobile?'40vh':'60vh',minHeight:isMobile?'40vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
                         <div style={{backgroundColor:'#cf1b39',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundImage: "url(" + Services2 + ")",width:'100%',height:'100%',opacity:'0.8', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundImage: "url(" + Services2 + ")",width:'100%',height:'100%',opacity:'0.8',  backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
                             <div style={{backgroundColor:'#731d2b',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>TRAINING</p>
                             </div> 
@@ -109,7 +98,7 @@ export default function SolutionsPage({}){
 
                     <div className='service-3' style={{ position:'relative ', width:'100%',  height:isMobile?'40vh':'60vh',minHeight:isMobile?'40vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
                         <div style={{backgroundColor:'#cf1b39',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundImage: "url(" + Services3 + ")",width:'100%',height:'100%',opacity:'0.8', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundImage: "url(" + Services3 + ")",width:'100%',height:'100%',opacity:'0.8',  backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
                             <div style={{backgroundColor:'#731d2b',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CUSTOMIZATION</p>
                             </div> 
@@ -125,7 +114,7 @@ export default function SolutionsPage({}){
 
                     <div className='service-4' style={{ position:'relative ', width:'100%',  height:isMobile?'40vh':'60vh',minHeight:isMobile?'40vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
                         <div style={{backgroundColor:'#cf1b39',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundImage: "url(" + Services4 + ")",width:'100%',height:'100%',opacity:'0.8', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundImage: "url(" + Services4 + ")",width:'100%',height:'100%',opacity:'0.8', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
                             <div style={{backgroundColor:'#731d2b',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>MAINTENANCE</p>
                             </div> 

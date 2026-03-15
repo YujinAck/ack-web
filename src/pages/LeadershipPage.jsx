@@ -1,25 +1,14 @@
-
-import React, { useRef } from 'react';
 import FooterComponent from './FooterComponent.jsx';
-import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 import HeaderComponent from './HeaderComponent.jsx'
 import AckLogo from '../assets/ack-logo.png'
 import ActionButton from '../components/ActionButton.jsx'
 import ManilaBldg1 from '../assets/manila-bldg-1.png'
-import CollabImg1 from '../assets/others/collab-img-1.jpg'
-import LightBulb1 from '../assets/others/lightbulb-img-1.png'
-import OfficeTeam1 from '../assets/others/office-team-1.jpg'
-import FadeRed1 from '../assets/fades/fade-red-1.png'
-import FadeRed2 from '../assets/fades/fade-red-2.png'
-import FadeRed3 from '../assets/fades/fade-red-3.png'
-import FadeRed4 from '../assets/fades/fade-red-4.png'
-import Maroon1 from '../assets/fades/fade-maroon-1.png'
 import VicenteRed from '../assets/people/vicente-red-sq.jpg'
 import CelsoRed from '../assets/people/celso-red-sq.jpg'
 
 import LineEffect1 from '../assets/others/line-effect-2.png'
-export default function LeadershipPage({}){
+export default function LeadershipPage(){
   const isMobile = useMediaQuery({ maxWidth: 767 })
   return (
    <div className='careers-overview-page'  style={{backgroundColor:'#f5f5f5',minHeight:'100vh'}}>
@@ -55,7 +44,7 @@ export default function LeadershipPage({}){
             </div>
         </div>
 
-         <div style={{display:'flex',height:'100%',display:'flex',height:isMobile?'35vh':'80vh',marginTop:isMobile?'4vh':'10vh', marginBottom:isMobile?'2vh':'5vh'}}>
+         <div style={{display:'flex',height:isMobile?'35vh':'80vh',marginTop:isMobile?'4vh':'10vh', marginBottom:isMobile?'2vh':'5vh'}}>
             <div style={{width:'100%',overflow:'hidden'}}>
                 <div  style={{position:'absolute',padding:'20px'}}>
                   <p style={{color:'white',fontSize:isMobile?'1rem':'1.4rem',fontWeight:'300'}}>Vicente Figueroa III</p>
