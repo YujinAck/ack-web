@@ -4,8 +4,6 @@ import ActionButton from '../components/ActionButton.jsx'
 import TileHeader from '../components/TileHeader.jsx'
 import FooterComponent from './FooterComponent.jsx'
 import AckLogoPng from '../assets/ack-logo.png'
-import VicentePort from '../assets/portraits/vicente-img-2b.png'
-import VicentePort2 from '../assets/portraits/vicente-img-2a.jpg'
 import ShowPic1 from '../assets/portraits/show-pic-1.jpg'
 import ShowPic2 from '../assets/portraits/show-pic-2.jpg'
 import ShowPic7 from '../assets/portraits/show-pic-7.jpg'
@@ -26,22 +24,7 @@ import LineEffect2 from '../assets/others/line-effect-2.png'
 import LineEffect3 from '../assets/others/line-effect-3.png'
 import { useMediaQuery } from 'react-responsive'
 import Slideshow from '../components/Slideshow.jsx'
-const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 992 })
-  return isDesktop ? children : null
-}
-const Tablet = ({ children }) => {
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
-  return isTablet ? children : null
-}
-const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 })
-  return isMobile ? children : null
-}
-const Default = ({ children }) => {
-  const isNotMobile = useMediaQuery({ minWidth: 768 })
-  return isNotMobile ? children : null
-}
+
 function HomePage() {
     
   const isMobile = useMediaQuery({ maxWidth: 767 })
@@ -212,11 +195,11 @@ function HomePage() {
              <div className='services-offered-full-page'  style={{height:'100%', minHeight:isMobile?'50vh':'800px', backgroundColor:'#f7f7f7',paddingBottom:'6vh'}}>
                 <p style={{fontSize:isMobile?'1.9rem':'2.3rem',fontWeight:'700',textAlign:'center',paddingTop:'8vh',color:'#3a4149'}}>Avaloq Services offered</p>
                 <p style={{ textAlign:'center', paddingLeft:'10vw', paddingBottom:'5vh', paddingRight:'10vw',fontWeight:'400',fontSize:isMobile?'1rem':'1.2rem',color:'rgb(60,60,60)'}}>We deliver comprehensive services covering consulting, training, customization, and ongoing maintenance. Our experts help organizations design the right solutions, build capable teams, tailor Avaloq to business needs, and ensure long-term platform stability.</p>
-                <div className='show-grid' style={{display:'flex', justifyContent:'center', minHeight:isMobile?'80vh':'100%', flexDirection: 'row', flexWrap: 'wrap',height:isMobile?'80%':'70%', justifyContent:'center', paddingLeft:isMobile?'12px':'6vw',paddingRight:isMobile?'12px':'6vw'}}>
+                <div className='show-grid' style={{display:'flex',  minHeight:isMobile?'80vh':'100%', flexDirection: 'row', flexWrap: 'wrap',height:isMobile?'80%':'70%', justifyContent:'center', paddingLeft:isMobile?'12px':'6vw',paddingRight:isMobile?'12px':'6vw'}}>
                    
                     <div className='service-1' style={{ position:'relative ', width:'100%', height:isMobile?'40vh':'60vh',minHeight:isMobile?'40vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
                         <div style={{backgroundColor:'#770619',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
-                            <div style={{width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + Services1 + ")",}}></div>
+                            <div style={{width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundImage: "url(" + Services1 + ")",}}></div>
                             <div style={{backgroundColor:'#cf1b39',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CONSULTING</p>
                             </div> 
@@ -227,7 +210,7 @@ function HomePage() {
 
                     <div className='service-2' style={{ position:'relative ', width:'100%', height:isMobile?'40vh':'60vh',minHeight:isMobile?'40vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
                         <div style={{backgroundColor:'#770619',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundImage: "url(" + Services2 + ")",width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundImage: "url(" + Services2 + ")",width:'100%',height:'100%',opacity:'0.5',  backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
                             <div style={{backgroundColor:'#cf1b39',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>TRAINING</p>
                             </div> 
@@ -242,7 +225,7 @@ function HomePage() {
 
                     <div className='service-3' style={{ position:'relative ', width:'100%',  height:isMobile?'40vh':'60vh',minHeight:isMobile?'40vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
                         <div style={{backgroundColor:'#770619',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundImage: "url(" + Services3 + ")",width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundImage: "url(" + Services3 + ")",width:'100%',height:'100%',opacity:'0.5', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
                             <div style={{backgroundColor:'#cf1b39',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>CUSTOMIZATION</p>
                             </div> 
@@ -258,7 +241,7 @@ function HomePage() {
 
                     <div className='service-4' style={{ position:'relative ', width:'100%',  height:isMobile?'40vh':'60vh',minHeight:isMobile?'40vh':'500px', marginRight:'6px',maxWidth:isMobile?'42vw':'300px',marginTop:'12px',borderRadius:'24px',overflow:'hidden'}}>
                         <div style={{backgroundColor:'#770619',width:'100%',height:'100%',display: 'flex',flexDirection:'column'}}>
-                            <div style={{backgroundImage: "url(" + Services4 + ")",width:'100%',height:'100%',opacity:'0.5', position :'absolute', backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
+                            <div style={{backgroundImage: "url(" + Services4 + ")",width:'100%',height:'100%',opacity:'0.5',  backgroundColor:'red',position :'absolute', backgroundSize: 'cover', backgroundRepeat:'no-repeat', backgroundPosition:'center center'}}></div>
                             <div style={{backgroundColor:'#cf1b39',zIndex:2, padding:'8px',width:isMobile?'fit-content':'70%',borderBottomRightRadius:'24px'}}>
                                 <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'600',color:'white',paddingLeft:'12px',paddingRight:'12px'}}>MAINTENANCE</p>
                             </div> 
