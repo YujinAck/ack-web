@@ -1,15 +1,14 @@
 
-import React, { useRef } from 'react';
+
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 import AckLogoWhitePng from '../assets/ack-logo-white.png'
 import LineEffect3 from '../assets/others/line-effect-2.png'
-export default function FooterComponent({}){
+export default function FooterComponent(){
   
   const isMobile = useMediaQuery({ maxWidth: 767 })
-    const ref = useRef(null);
   return (
-    <div className='footer-comp' style={{width:'100%',height:'fit-content',backgroundColor:'blue', position:'relative', backgroundColor:'#cf1b39',display:'flex',flexDirection:'column'}}>
+    <div className='footer-comp' style={{width:'100%',height:'fit-content', position:'relative', backgroundColor:'#cf1b39',display:'flex',flexDirection:'column'}}>
         {!isMobile&&
         <div style={{display:'flex',position:'absolute',pointerEvents:'none',width:'100%',height:'100%',justifyContent:'flex-start' }}>
             <img src={LineEffect3} alt="fade" style={{float: 'right', objectFit:'contain', transform:'scaleX(-1)'}} />

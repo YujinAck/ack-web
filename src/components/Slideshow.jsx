@@ -1,10 +1,9 @@
 
 
 import { useMediaQuery } from 'react-responsive'
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import './slideshow.css'
 import MakatiCity2 from '../assets/makati-city-2.jpg'
-import MakatiCity3 from '../assets/makati-city-2b.jpg'
 import MakatiAck from '../assets/makati-ack.png'
 import ManilaBldg1 from '../assets/manila-bldg-1.png'
 import BanaueAck from '../assets/banaue-ack.png'
@@ -12,7 +11,7 @@ export default function Slideshow({g}){
   
   const isMobile = useMediaQuery({ maxWidth: 767 })
 
-  const [images, setImages] = useState([MakatiAck,ManilaBldg1,BanaueAck,MakatiCity2]);
+  const [images ] = useState([MakatiAck,ManilaBldg1,BanaueAck,MakatiCity2]);
   const [index, setIndex] = useState(0);
 
   const lines = [

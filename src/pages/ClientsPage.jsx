@@ -1,10 +1,8 @@
 
-import React, { useRef } from 'react';
+
 import FooterComponent from './FooterComponent.jsx';
-import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive'
 import HeaderComponent from './HeaderComponent.jsx'
-import AckLogo from '../assets/ack-logo.png'
 import ActionButton from '../components/ActionButton.jsx'
 import ManilaBldg1 from '../assets/manila-bldg-1.png'
 import FadeRed4 from '../assets/fades/fade-red-4.png'
@@ -12,7 +10,7 @@ import RedLinesBG from '../assets/backgrounds/red-lines-bg.jpg'
 
 import LineEffect1 from '../assets/others/line-effect-2.png'
 import TileHeader from '../components/TileHeader.jsx';
-export default function ClientsPage({}){
+export default function ClientsPage(){
   const isMobile = useMediaQuery({ maxWidth: 767 })
   return (
    <div className='careers-overview-page'  style={{backgroundColor:'#f5f5f5',minHeight:'100vh'}}>

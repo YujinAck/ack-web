@@ -21,6 +21,7 @@ export default function TileHeader({title,story,tasks,order,img}){
     case 'PH': imgFile = FLAG_PH; break
     case 'SG': imgFile = FLAG_SG; break
     case 'TW': imgFile = FLAG_TW; break
+    default: break;
   }
     let taskList = []
       tasks.forEach(t=>{
