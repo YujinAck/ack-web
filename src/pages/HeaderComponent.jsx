@@ -15,12 +15,6 @@ const HeaderComponent = ({ title }) => {
            <img src={AckLogoPng} alt="ACK LOGO ICON" style={{ width: '80px', height: '80px' }} />
         </motion.div>
 
-        {/* Navigation */}
-        <nav className="hidden gap-8 text-sm font-medium text-muted-foreground md:flex">
-          <a href="#" className="transition-colors hover:text-foreground">Careers</a>
-          <a href="#" className="transition-colors hover:text-foreground">About</a>
-          <a href="#" className="transition-colors hover:text-foreground">Contact Us</a>
-        </nav>
 
         {/* Action */}
         <motion.div
