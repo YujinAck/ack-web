@@ -1,32 +1,210 @@
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-import { motion } from "framer-motion";
-import AckLogoPng from '../assets/ack-logo.png'
-const HeaderComponent = ({ title }) => {
+import AckLogoPng from '../assets/ack-logo.png';
+
+import './HeaderComponent.css';
+
+
+const navItems = [
+  {
+    label: 'Solutions',
+    to: '/solutions',
+  },
+  {
+    label: 'Clients',
+    to: '/about/clients',
+  },
+  {
+    label: 'Leadership',
+    to: '/about/leadership',
+  },
+  {
+    label: 'Careers',
+    to: '/careers',
+  },
+];
+
+
+const HeaderComponent = () => {
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+
+  const handleNavigation = (to) => {
+    setMobileMenuOpen(false);
+
+    window.location.href = to;
+  };
+
+
   return (
-       <header className="w-full bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50" style={{borderBottom:'solid 7px #ce1a38'}}>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6" >
-        {/* Logo / Brand */}
-        <motion.div
-          initial={{ opacity: 0, y: -6 }}
+    <header className="ack-header">
+
+      <div className="ack-header-container">
+
+        {/* =====================================================
+            LOGO
+        ===================================================== */}
+
+        <motion.a
+          href="/"
+          className="ack-header-logo"
+          initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-xl font-semibold tracking-tight"
+          transition={{ duration: 0.45 }}
         >
-           <img src={AckLogoPng} alt="ACK LOGO ICON" style={{ width: '80px', height: '80px' }} />
-        </motion.div>
+          <img
+            src={AckLogoPng}
+            alt="ACK Solutions"
+          />
+        </motion.a>
 
 
-        {/* Action */}
-        <motion.div
+        {/* =====================================================
+            DESKTOP NAVIGATION
+        ===================================================== */}
+
+        <nav className="ack-header-nav">
+
+          {navItems.map((item, index) => (
+
+            <motion.a
+              key={item.label}
+              href={item.to}
+              className="ack-header-nav-link"
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.35,
+                delay: 0.08 + index * 0.05,
+              }}
+            >
+              {item.label}
+            </motion.a>
+
+          ))}
+
+        </nav>
+
+
+        {/* =====================================================
+            DESKTOP CTA
+        ===================================================== */}
+
+        {/* <motion.a
+          href="/contact"
+          className="ack-header-cta"
           initial={{ opacity: 0, y: -6 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
+          transition={{
+            duration: 0.4,
+            delay: 0.2,
+          }}
         >
-          <div className="rounded-2xl px-5">Get Started</div>
-        </motion.div>
+          <span>Get Started</span>
+        </motion.a> */}
+
+
+        {/* =====================================================
+            MOBILE MENU BUTTON
+        ===================================================== */}
+
+        <button
+          type="button"
+          className={`ack-header-menu ${
+            mobileMenuOpen ? 'is-open' : ''
+          }`}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation"
+          aria-expanded={mobileMenuOpen}
+        >
+
+          <span />
+          <span />
+
+        </button>
+
       </div>
+
+
+      {/* =====================================================
+          MOBILE NAVIGATION
+      ===================================================== */}
+
+      <AnimatePresence>
+
+        {mobileMenuOpen && (
+
+          <motion.div
+            className="ack-mobile-menu"
+            initial={{
+              opacity: 0,
+              height: 0,
+            }}
+            animate={{
+              opacity: 1,
+              height: 'auto',
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+            }}
+            transition={{
+              duration: 0.25,
+            }}
+          >
+
+            <nav>
+
+              {navItems.map((item, index) => (
+
+                <motion.a
+                  key={item.label}
+                  href={item.to}
+                  initial={{
+                    opacity: 0,
+                    x: -10,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  transition={{
+                    delay: index * 0.04,
+                  }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span>
+                    {item.label}
+                  </span>
+
+                  <span>↗</span>
+                </motion.a>
+
+              ))}
+
+
+              <a
+                href="/contact"
+                className="ack-mobile-cta"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Get Started
+                <span>↗</span>
+              </a>
+
+            </nav>
+
+          </motion.div>
+
+        )}
+
+      </AnimatePresence>
+
     </header>
   );
 };
+
 
 export default HeaderComponent;

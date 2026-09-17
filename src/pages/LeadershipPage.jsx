@@ -1,91 +1,450 @@
-import FooterComponent from './FooterComponent.jsx';
-import { useMediaQuery } from 'react-responsive'
+import FooterComponent from './FooterComponent.jsx'
 import HeaderComponent from './HeaderComponent.jsx'
-import AckLogo from '../assets/ack-logo.png'
 import ActionButton from '../components/ActionButton.jsx'
+
+import AckLogo from '../assets/ack-logo.png'
 import ManilaBldg1 from '../assets/manila-bldg-1.png'
 import VicenteRed from '../assets/people/vicente-red-sq.jpg'
 import CelsoRed from '../assets/people/celso-red-sq.jpg'
-
 import LineEffect1 from '../assets/others/line-effect-2.png'
-export default function LeadershipPage(){
-  const isMobile = useMediaQuery({ maxWidth: 767 })
-  return (
-   <div className='careers-overview-page'  style={{backgroundColor:'#f5f5f5',minHeight:'100vh'}}>
-      <HeaderComponent/>
-      <div style={{}}>
-        <div style={{display:'flex', flexDirection:isMobile?'column':'row',height:isMobile?'70vh':'80vh'}}>
-            <div style={{width:'100%',marginTop:'10vh',paddingLeft:'5vw',paddingRight:'5vw'}}>
-              <p style={{fontSize:isMobile?'2.2rem':'2.6rem',fontWeight:isMobile?'500':'400',paddingTop:'8vh',color:'black'}}>Built by Experts. Led by Experience.</p>
-              <p style={{fontSize:'1.2rem',fontWeight:'400',lineHeight:'1.5rem', color:'rgb(64, 64, 64)',marginTop:'12px'}}>Our leadership is built on deep technical expertise and real-world delivery experience. The company was founded by seasoned Avaloq professionals who have spent years designing, developing, and implementing complex banking solutions across multiple markets.</p>         
 
-            </div>
-           {!isMobile&&<div style={{width:'100%',alignContent:'center',justifyContent:'center',display:'flex',padding:'10vh 0vw'}}> 
-              <div style={{width:isMobile?'100vw':'28vw',borderRadius:'18px',overflow:'hidden'}}>
-                <img src={ManilaBldg1} alt="manila ack logo" style={{ width: '100%', height: '100%', objectFit:'cover' }} />
-              </div>
-            </div>}
-        </div>
+import './LeadershipPage.css'
 
-        <div style={{padding:'2vh 5vw'}}>
-          <div style={{backgroundColor:'#59272c',borderRadius:'12px',padding:isMobile?'5vh 30px':'5vh 5vw'}}>
-              <p style={{color:'white',fontSize:'2rem',fontWeight:'500',lineHeight:'2rem',paddingBottom:'12px'}}>Leadership Rooted in Avaloq Mastery</p>
-              <p style={{color:'white',fontSize:'1.3rem',fontWeight:'300'}}>Leadership rooted in practical experience creates clarity, confidence, and consistent results across every engagement.</p>
-          </div>
-        </div>
 
-         <div style={{display:'flex',height:'100%',paddingLeft:'5vw',paddingRight:'5vw'}}>
-            <div style={{width:'35%',height:'300px',marginRight:'5vw'}}>
-                <img src={AckLogo} alt="ACK LOGO ICON" style={{width: '100%', height: '100%', objectFit:'contain' }} />
-            </div>
-            <div style={{width:'90%',alignContent:'center'}}>
-                <p style={{fontSize:isMobile?'1.4rem':'2rem',fontWeight:isMobile?'480':'420',lineHeight: isMobile?'1.4rem':'2rem'}}>WHO WE ARE​</p>
-                <p style={{fontSize:isMobile?'0.85rem':'1.1rem', fontWeight:'360',marginTop:'12px'}}>Founded on October 18, 2022, ACK Solutions was established by Avaloq professionals with over a decade of hands-on experience in customizing and enhancing Avaloq Wealth products. ​</p>
-            </div>
-        </div>
+const leaders = [
+    {
+        name: 'Vicente Figueroa III',
+        role: 'President / CEO',
+        image: VicenteRed,
+        alt: 'ACK President and CEO'
+    },
+    {
+        name: 'Celso Ribunal',
+        role: 'COO',
+        image: CelsoRed,
+        alt: 'ACK Chief Operating Officer'
+    }
+]
 
-         <div style={{display:'flex',height:isMobile?'35vh':'80vh',marginTop:isMobile?'4vh':'10vh', marginBottom:isMobile?'2vh':'5vh'}}>
-            <div style={{width:'100%',overflow:'hidden'}}>
-                <div  style={{position:'absolute',padding:'20px'}}>
-                  <p style={{color:'white',fontSize:isMobile?'1rem':'1.4rem',fontWeight:'300'}}>Vicente Figueroa III</p>
-                  <p style={{color:'white',fontSize:isMobile?'0.8rem':'1rem',fontWeight:'300',marginTop:'-5px',opacity:'0.85'}}>President / CEO​</p>
+
+export default function LeadershipPage() {
+
+    return (
+        <div className="leadership-page">
+
+            <HeaderComponent />
+
+            <main>
+
+                {/* =====================================================
+                    HERO
+                ===================================================== */}
+
+                <section className="leadership-hero">
+
+                    <div
+                        className="leadership-hero-bg"
+                        style={{
+                            backgroundImage: `
+                                linear-gradient(
+                                    90deg,
+                                    rgba(10, 11, 15, 0.96) 0%,
+                                    rgba(10, 11, 15, 0.84) 42%,
+                                    rgba(10, 11, 15, 0.45) 75%,
+                                    rgba(10, 11, 15, 0.2) 100%
+                                ),
+                                url(${ManilaBldg1})
+                            `
+                        }}
+                    />
+
+                    <div className="leadership-container">
+
+                        <div className="leadership-hero-content">
+
+                            <div className="leadership-eyebrow">
+                                LEADERSHIP
+                            </div>
+
+                            <h1>
+                                Built by experts.
+                                <span>Led by experience.</span>
+                            </h1>
+
+                            <p>
+                                ACK Solutions was founded by seasoned Avaloq
+                                professionals with deep experience in
+                                designing, developing, customizing, and
+                                delivering banking solutions across multiple
+                                markets.
+                            </p>
+
+                            <div className="leadership-hero-actions">
+
+                                <a
+                                    href="#leadership"
+                                    className="leadership-scroll-link"
+                                >
+                                    Meet our leadership
+                                    <span>↓</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div className="leadership-hero-index">
+
+                        <strong>01</strong>
+
+                        <span>
+                            Leadership
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                {/* =====================================================
+                    LEADERSHIP INTRO
+                ===================================================== */}
+
+                <section
+                    id="leadership"
+                    className="leadership-intro"
+                >
+
+                    <div className="leadership-container">
+
+                        <div className="leadership-intro-grid">
+
+                            <div className="leadership-section-label">
+                                OUR FOUNDATION
+                            </div>
+
+                            <div>
+
+                                <div className="leadership-kicker">
+                                    EXPERIENCE FIRST
+                                </div>
+
+                                <h2>
+                                    Expertise that
+                                    <span>shapes how we lead.</span>
+                                </h2>
+
+                                <div className="leadership-copy">
+
+                                    <p className="leadership-lead">
+                                        Our leadership is built on deep
+                                        technical expertise and real-world
+                                        delivery experience.
+                                    </p>
+
+                                    <p>
+                                        The company was founded by seasoned
+                                        Avaloq professionals who have spent
+                                        years designing, developing, and
+                                        implementing complex banking solutions
+                                        across multiple markets.
+                                    </p>
+
+                                    <p>
+                                        That experience continues to shape
+                                        how we approach every engagement —
+                                        with technical depth, practical
+                                        understanding, and a focus on
+                                        delivering outcomes that work in
+                                        real banking environments.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                {/* =====================================================
+                    STATEMENT
+                ===================================================== */}
+
+                <section className="leadership-statement">
+
+                    <div className="leadership-container">
+
+                        <div className="leadership-statement-card">
+
+                            <div className="leadership-statement-number">
+                                02
+                            </div>
+
+                            <div>
+
+                                <div className="leadership-kicker light">
+                                    AVALOQ MASTERY
+                                </div>
+
+                                <h2>
+                                    Leadership rooted in
+                                    <span>practical experience.</span>
+                                </h2>
+
+                                <p>
+                                    Leadership rooted in practical experience
+                                    creates clarity, confidence, and consistent
+                                    results across every engagement.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                {/* =====================================================
+                    WHO WE ARE
+                ===================================================== */}
+
+                <section className="leadership-who">
+
+                    <div className="leadership-container">
+
+                        <div className="leadership-who-grid">
+
+                            <div className="leadership-logo-panel">
+
+                                <div className="leadership-logo-circle">
+                                    <img
+                                        src={AckLogo}
+                                        alt="ACK Solutions"
+                                    />
+                                </div>
+
+                                <span>
+                                    ACK SOLUTIONS
+                                </span>
+
+                            </div>
+
+
+                            <div className="leadership-who-content">
+
+                                <div className="leadership-kicker">
+                                    03 / WHO WE ARE
+                                </div>
+
+                                <h2>
+                                    Founded on
+                                    <span>Avaloq expertise.</span>
+                                </h2>
+
+                                <p className="leadership-lead">
+                                    Founded on October 18, 2022, ACK Solutions
+                                    was established by Avaloq professionals
+                                    with over a decade of hands-on experience
+                                    in customizing and enhancing Avaloq Wealth
+                                    products.
+                                </p>
+
+                                <p>
+                                    With deep expertise in configuration,
+                                    development, and platform optimization,
+                                    the founders have successfully supported
+                                    financial institutions in tailoring
+                                    Avaloq solutions to meet complex business
+                                    and regulatory requirements.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+ <section className="leadership-founders">
+
+    <div className="leadership-container">
+
+        <div className="leadership-founders-heading">
+
+            <div>
+                <div className="leadership-kicker">
+                    THE PEOPLE BEHIND ACK
                 </div>
-                <img src={VicenteRed} alt="ACK FOUNDER CEO" style={{width: '100%', height: '100%', objectFit:'cover' }} />
+
+                <h2>
+                    Experience at the
+                    <span>helm.</span>
+                </h2>
             </div>
-            <div style={{width:'100%',overflow:'hidden',position:'relative'}}>
-                <div style={{position:'absolute', width:'100%',padding:'20px',textAlign:'right',display:'flex',flexDirection:'column'}}>
-                    <p style={{color:'white',fontSize:isMobile?'1rem':'1.4rem',fontWeight:'300'}}>Celso Ribunal</p>
-                    <p style={{color:'white',fontSize:isMobile?'0.8rem':'1rem',fontWeight:'300',marginTop:'-5px',opacity:'0.85'}}>COO​</p>
+
+            <p>
+                ACK Solutions is guided by leaders whose careers
+                have been shaped by hands-on work in Avaloq and
+                banking technology.
+            </p>
+
+        </div>
+
+
+        <div className="leadership-founders-grid">
+
+            <div className="leadership-founder">
+
+                <img
+                    src={VicenteRed}
+                    alt="ACK President and CEO"
+                />
+
+                <div className="leadership-founder-overlay">
+                    <div>
+                        <h3>Vicente Figueroa III</h3>
+                        <p>President / CEO</p>
+                    </div>
+
+                    <span>01</span>
                 </div>
-                <img src={CelsoRed} alt="ACK FOUNDER COO" style={{width: '100%', height: '100%', objectFit:'cover' }} />
+
             </div>
-         </div>
-         <div style={{padding:isMobile?'0 20px':'0 10vw',marginBottom:isMobile?'8vh':'12vh'}}>
-           <p style={{fontSize:isMobile?'1rem':'1.8rem',textAlign:'center', fontWeight:isMobile?'300':'300',lineHeight:isMobile?'1.2rem':'2.2rem', color:'black',marginTop:'12px'}}>With deep expertise in configuration, development, and platform optimization, the founders have successfully supported financial institutions in tailoring Avaloq solutions to meet complex business and regulatory requirements.</p>         
-
-         </div>
-          
 
 
-        <div className='footer-msg-careers' style={{padding:'5vw'}}>
-          
-            <div style={{backgroundColor:'#cf1b39',borderRadius:'18px',position:'relative'}}>
-                <div style={{display:'flex',position:'absolute',width:'100%',height:'100%',pointerEvents:'none', justifyContent:'flex-end',zIndex:0 }}>
-                  <img src={LineEffect1} alt="fade" style={{float: 'right', objectFit:'contain'}} />
+            <div className="leadership-founder">
+
+                <img
+                    src={CelsoRed}
+                    alt="ACK Chief Operating Officer"
+                />
+
+                <div className="leadership-founder-overlay">
+                    <div>
+                        <h3>Celso Ribunal</h3>
+                        <p>COO</p>
+                    </div>
+
+                    <span>02</span>
                 </div>
-              <div style={{padding:'42px 8vw',zIndex:4}}>
-                <p style={{fontSize:'1.3rem',fontWeight:'500',color:'white'}}>Are you ready to take the leap</p>
-                <p style={{fontSize:'1rem',fontWeight:'400',color:'white',opacity:'0.85'}}>Step forward with confidence and explore opportunities that challenge and inspire you to grow.</p>
-                <br/>
-                
-                <ActionButton title='Contact Us' type='white'/>
-              </div>
+
             </div>
 
         </div>
-      </div>
-        
-      <FooterComponent/>
-   </div>
-  )
+
+    </div>
+
+</section>
+
+
+                {/* =====================================================
+                    PHILOSOPHY
+                ===================================================== */}
+
+                <section className="leadership-philosophy">
+
+                    <div className="leadership-container">
+
+                        <div className="leadership-philosophy-inner">
+
+                            <div className="leadership-philosophy-number">
+                                04
+                            </div>
+
+                            <div>
+
+                                <div className="leadership-kicker">
+                                    OUR APPROACH
+                                </div>
+
+                                <h2>
+                                    Deep expertise.
+                                    <span>Practical leadership.</span>
+                                </h2>
+
+                                <p>
+                                    Our leadership philosophy is grounded in
+                                    the belief that technical expertise only
+                                    creates value when it can be translated
+                                    into practical delivery.
+                                </p>
+
+                                <p>
+                                    That means understanding the platform,
+                                    understanding the business, and
+                                    understanding the realities of delivering
+                                    change within financial institutions.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                {/* =====================================================
+                    CTA
+                ===================================================== */}
+
+                <section className="leadership-cta">
+
+                    <div className="leadership-container">
+
+                        <div className="leadership-cta-card">
+
+                            <img
+                                src={LineEffect1}
+                                alt=""
+                                className="leadership-cta-effect"
+                            />
+
+                            <div className="leadership-cta-content">
+
+                                <div className="leadership-kicker light">
+                                    WORK WITH ACK
+                                </div>
+
+                                <h2>
+                                    Let's build what's
+                                    <span>next.</span>
+                                </h2>
+
+                                <p>
+                                    Whether you're looking for Avaloq
+                                    expertise, delivery support, or a
+                                    trusted technology partner, we'd be
+                                    glad to start the conversation.
+                                </p>
+
+                                <ActionButton
+                                    title="Contact us"
+                                    type="white"
+                                />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <FooterComponent />
+
+        </div>
+    )
 }
