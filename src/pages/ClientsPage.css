@@ -1,0 +1,1156 @@
+/* =========================================================
+   ACK SOLUTIONS
+   CLIENTS PAGE
+========================================================= */
+
+.clients-page {
+
+    --ack-red: #cf1b39;
+    --ack-red-bright: #ff4965;
+    --ack-red-dark: #731d2b;
+
+    --ack-black: #111318;
+    --ack-dark: #191c22;
+
+    --ack-text: #343840;
+    --ack-muted: #747a84;
+
+    --ack-light: #f5f5f6;
+    --ack-border: #e1e3e7;
+
+    background: #ffffff;
+
+    color: var(--ack-text);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.clients-container {
+
+    width: min(
+        1240px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.clients-kicker {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: var(--ack-red);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+.clients-kicker::before {
+
+    content: '';
+
+    width: 27px;
+    height: 2px;
+
+    flex-shrink: 0;
+
+    background: var(--ack-red);
+}
+
+
+.clients-kicker.light {
+
+    color: rgba(255,255,255,0.68);
+}
+
+
+.clients-kicker.light::before {
+
+    background: var(--ack-red-bright);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.clients-hero {
+
+    position: relative;
+
+    height: min(
+        700px,
+        calc(100vh - 72px)
+    );
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    background: #f2f2f3;
+}
+
+
+.clients-hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.clients-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    max-width: 850px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.clients-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+    color: var(--ack-red);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+
+.clients-eyebrow::before {
+
+    content: '';
+
+    width: 30px;
+    height: 2px;
+
+    background: var(--ack-red);
+}
+
+
+.clients-hero h1 {
+
+    max-width: 800px;
+
+    margin: 0;
+
+    font-size: clamp(
+        3.8rem,
+        6.2vw,
+        6rem
+    );
+
+    line-height: 0.93;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 600;
+}
+
+
+.clients-hero h1 span {
+
+    display: block;
+
+    color: var(--ack-red);
+}
+
+
+.clients-hero-content > p {
+
+    max-width: 680px;
+
+    margin: 32px 0 0;
+
+    color: #555a63;
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+}
+
+
+.clients-hero-actions {
+
+    margin-top: 35px;
+}
+
+
+.clients-scroll-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--ack-text);
+
+    text-decoration: none;
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+}
+
+
+.clients-scroll-link span {
+
+    color: var(--ack-red);
+
+    font-size: 1.3rem;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.clients-scroll-link:hover span {
+
+    transform:
+        translateY(5px);
+}
+
+
+.clients-hero-index {
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    z-index: 3;
+
+    min-width: 185px;
+
+    padding: 21px 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    border-top:
+        1px solid
+        rgba(0,0,0,0.12);
+
+    border-left:
+        1px solid
+        rgba(0,0,0,0.12);
+
+    background:
+        rgba(255,255,255,0.45);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.clients-hero-index strong {
+
+    color: var(--ack-red);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.clients-hero-index span {
+
+    color: #555a63;
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.clients-intro {
+
+    padding: 135px 0 115px;
+}
+
+
+.clients-intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        150px
+        minmax(0, 850px);
+
+    gap: 65px;
+}
+
+
+.clients-section-label {
+
+    padding-top: 8px;
+
+    color: var(--ack-muted);
+
+    font-size: 0.67rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+.clients-intro h2 {
+
+    margin: 20px 0 0;
+
+    font-size: clamp(
+        2.8rem,
+        5vw,
+        4.8rem
+    );
+
+    line-height: 0.97;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.clients-intro h2 span {
+
+    display: block;
+
+    color: var(--ack-red);
+}
+
+
+.clients-intro-copy {
+
+    max-width: 760px;
+
+    margin-top: 34px;
+}
+
+
+.clients-intro-copy p {
+
+    margin: 0 0 18px;
+
+    color: var(--ack-muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+.clients-intro-copy .clients-lead {
+
+    color: var(--ack-text);
+
+    font-size: 1.15rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MARKETS
+========================================================= */
+
+.clients-markets {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    margin-top: 85px;
+
+    border-top:
+        1px solid
+        var(--ack-border);
+
+    border-bottom:
+        1px solid
+        var(--ack-border);
+}
+
+
+.clients-market {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    min-height: 105px;
+
+    padding: 20px 25px 20px 0;
+}
+
+
+.clients-market + .clients-market {
+
+    padding-left: 25px;
+
+    border-left:
+        1px solid
+        var(--ack-border);
+}
+
+
+.clients-market-code {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    background: var(--ack-red);
+
+    color: white;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+.clients-market strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--ack-text);
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+}
+
+
+.clients-market div span {
+
+    color: var(--ack-muted);
+
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   TRACK RECORD
+========================================================= */
+
+.clients-track-record {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    min-height: 600px;
+
+    background: var(--ack-red);
+
+    color: white;
+}
+
+
+.clients-track-image {
+
+    position: relative;
+
+    min-height: 550px;
+
+    overflow: hidden;
+
+    background: var(--ack-red-dark);
+}
+
+
+.clients-track-building {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.clients-track-fade {
+
+    position: absolute;
+
+    z-index: 2;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.clients-track-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 85px max(6vw, 45px);
+
+    background: var(--ack-red);
+}
+
+
+.clients-track-content h2 {
+
+    max-width: 600px;
+
+    margin: 20px 0 27px;
+
+    font-size: clamp(
+        2.7rem,
+        4.5vw,
+        4.5rem
+    );
+
+    line-height: 0.96;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.clients-track-content h2 span {
+
+    display: block;
+
+    color: rgba(255,255,255,0.5);
+}
+
+
+.clients-track-content p {
+
+    max-width: 570px;
+
+    margin: 0 0 18px;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+
+.clients-track-content .clients-track-lead {
+
+    color: white;
+
+    font-size: 1.08rem;
+
+    line-height: 1.7;
+}
+
+
+.clients-track-line {
+
+    width: 55px;
+    height: 2px;
+
+    margin: 25px 0 15px;
+
+    background: rgba(255,255,255,0.7);
+}
+
+
+.clients-track-caption {
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.clients-projects {
+    padding: 135px 0;
+    background: var(--ack-light);
+}
+
+.clients-section-heading {
+    display: grid;
+
+    /* Same columns as the project cards */
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: end;
+
+    margin-bottom: 65px;
+}
+
+.clients-section-heading > div {
+    min-width: 0;
+}
+
+.clients-section-heading h2 {
+    margin: 20px 0 0;
+
+    font-size: clamp(
+        2.8rem,
+        5vw,
+        4.7rem
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+.clients-section-heading h2 span {
+    display: block;
+    color: var(--ack-red);
+}
+
+.clients-section-heading > p {
+    max-width: 430px;
+
+    margin: 0;
+
+    color: var(--ack-muted);
+
+    font-size: 0.88rem;
+
+    line-height: 1.8;
+}
+
+
+/* PROJECT GRID */
+
+.clients-project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    width: 100%;
+}
+
+
+/*
+ * TileHeader may have its own fixed width.
+ * Force it to occupy the grid column.
+ */
+.clients-project-grid > * {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+}
+
+/*
+    TileHeader is intentionally left as the existing
+    reusable component.
+
+    The surrounding layout now gives it more room and
+    makes the project section feel like a case-study grid.
+*/
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.clients-cta {
+
+    padding: 105px 0;
+}
+
+
+.clients-cta-card {
+
+    position: relative;
+
+    min-height: 420px;
+
+    overflow: hidden;
+
+    background: var(--ack-dark);
+
+    color: white;
+}
+
+
+.clients-cta-card::after {
+
+    content: '';
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 5px;
+
+    background: var(--ack-red);
+}
+
+
+.clients-cta-effect {
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: 0;
+    right: 0;
+
+    width: 58%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: right center;
+
+    opacity: 0.48;
+}
+
+
+.clients-cta-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    padding: 75px;
+}
+
+
+.clients-cta-content h2 {
+
+    margin: 20px 0;
+
+    font-size: clamp(
+        2.7rem,
+        5vw,
+        4.6rem
+    );
+
+    line-height: 0.96;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.clients-cta-content h2 span {
+
+    display: block;
+
+    color: var(--ack-red-bright);
+}
+
+
+.clients-cta-content p {
+
+    max-width: 620px;
+
+    margin: 0 0 30px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .clients-markets {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .clients-market:nth-child(3) {
+
+        border-top:
+            1px solid
+            var(--ack-border);
+    }
+
+
+    .clients-market:nth-child(4) {
+
+        border-top:
+            1px solid
+            var(--ack-border);
+    }
+
+
+    .clients-section-heading {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            300px;
+
+        gap: 40px;
+    }
+
+
+    .clients-track-content {
+
+        padding:
+            70px 45px;
+    }
+
+}
+@media (max-width: 1050px) {
+
+    .clients-section-heading {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 30px;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .clients-projects {
+        padding: 90px 0;
+    }
+
+    .clients-section-heading {
+        display: block;
+
+        margin-bottom: 45px;
+    }
+
+    .clients-section-heading > p {
+        max-width: 100%;
+        margin-top: 25px;
+    }
+
+    .clients-project-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .clients-project-grid > * {
+        width: 100% !important;
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .clients-container {
+
+        width:
+            calc(100% - 32px);
+    }
+
+
+    /* HERO */
+
+    .clients-hero {
+
+        height:
+            calc(100svh - 65px);
+
+        min-height: 600px;
+    }
+
+
+    .clients-hero-background {
+
+        background-position:
+            65% center;
+    }
+
+
+    .clients-hero-content {
+
+        justify-content: center;
+    }
+
+
+    .clients-hero h1 {
+
+        font-size:
+            clamp(
+                3.3rem,
+                13vw,
+                4.8rem
+            );
+    }
+
+
+    .clients-hero-content > p {
+
+        max-width: 94%;
+
+        font-size: 0.9rem;
+    }
+
+
+    .clients-hero-index {
+
+        left: 16px;
+        right: 16px;
+
+        min-width: 0;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        border-left: 0;
+    }
+
+
+    /* INTRO */
+
+    .clients-intro {
+
+        padding: 90px 0;
+    }
+
+
+    .clients-intro-grid {
+
+        display: block;
+    }
+
+
+    .clients-section-label {
+
+        margin-bottom: 32px;
+    }
+
+
+    .clients-intro h2 {
+
+        font-size: 2.8rem;
+    }
+
+
+    .clients-intro-copy
+    .clients-lead {
+
+        font-size: 1.05rem;
+    }
+
+
+    /* MARKETS */
+
+    .clients-markets {
+
+        grid-template-columns: 1fr;
+
+        margin-top: 60px;
+    }
+
+
+    .clients-market,
+    .clients-market + .clients-market {
+
+        min-height: 82px;
+
+        padding: 17px 0;
+
+        border-left: 0;
+    }
+
+
+    .clients-market + .clients-market {
+
+        border-top:
+            1px solid
+            var(--ack-border);
+    }
+
+
+    /* TRACK RECORD */
+
+    .clients-track-record {
+
+        display: block;
+    }
+
+
+    .clients-track-image {
+
+        min-height: 330px;
+    }
+
+
+    .clients-track-content {
+
+        padding: 70px 25px;
+    }
+
+
+    .clients-track-content h2 {
+
+        font-size: 2.8rem;
+    }
+
+
+    /* PROJECTS */
+
+    .clients-projects {
+
+        padding: 90px 0;
+    }
+
+
+    .clients-section-heading {
+
+        display: block;
+
+        margin-bottom: 45px;
+    }
+
+
+    .clients-section-heading > p {
+
+        margin-top: 25px;
+    }
+
+
+    .clients-project-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    /* CTA */
+
+    .clients-cta {
+
+        padding: 60px 0;
+    }
+
+
+    .clients-cta-content {
+
+        padding: 55px 25px;
+    }
+
+
+    .clients-cta-content h2 {
+
+        font-size: 2.8rem;
+    }
+
+
+    .clients-cta-effect {
+
+        width: 100%;
+
+        opacity: 0.25;
+    }
+
+}

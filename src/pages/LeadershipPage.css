@@ -1,0 +1,1412 @@
+/* =========================================================
+   ACK SOLUTIONS
+   LEADERSHIP PAGE
+========================================================= */
+
+.leadership-page {
+
+    --ack-red: #cf1b39;
+    --ack-red-bright: #ff4965;
+    --ack-red-dark: #721d2c;
+
+    --ack-black: #111318;
+    --ack-dark: #191c22;
+
+    --ack-text: #343840;
+    --ack-muted: #747a84;
+
+    --ack-light: #f5f5f6;
+    --ack-border: #e1e3e7;
+
+    background: #ffffff;
+
+    color: var(--ack-text);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.leadership-container {
+
+    width: min(
+        1240px,
+        calc(100% - 48px)
+    );
+
+    margin: 0 auto;
+    margin-top: 20vh;
+}
+
+
+/* =========================================================
+   KICKER
+========================================================= */
+
+.leadership-kicker {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    color: var(--ack-red);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+.leadership-kicker::before {
+
+    content: '';
+
+    width: 27px;
+    height: 2px;
+
+    flex-shrink: 0;
+
+    background: var(--ack-red);
+}
+
+
+.leadership-kicker.light {
+
+    color: rgba(255,255,255,0.65);
+}
+
+
+.leadership-kicker.light::before {
+
+    background: var(--ack-red-bright);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.leadership-hero {
+
+    position: relative;
+
+    height: min(
+        700px,
+        calc(100vh - 72px)
+    );
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    color: white;
+
+    background: var(--ack-black);
+}
+
+
+.leadership-hero-bg {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.01);
+}
+
+
+.leadership-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    max-width: 850px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.leadership-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+
+    color: var(--ack-red-bright);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+}
+
+
+.leadership-eyebrow::before {
+
+    content: '';
+
+    width: 30px;
+    height: 2px;
+
+    background: var(--ack-red-bright);
+}
+
+
+.leadership-hero h1 {
+
+    max-width: 850px;
+
+    margin: 0;
+
+    font-size: clamp(
+        3.8rem,
+        6.3vw,
+        6.1rem
+    );
+
+    line-height: 0.93;
+
+    letter-spacing: -0.06em;
+
+    font-weight: 600;
+}
+
+
+.leadership-hero h1 span {
+
+    display: block;
+
+    color: var(--ack-red-bright);
+}
+
+
+.leadership-hero-content > p {
+
+    max-width: 670px;
+
+    margin: 32px 0 0;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+.leadership-hero-actions {
+
+    margin-top: 34px;
+}
+
+
+.leadership-scroll-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+}
+
+
+.leadership-scroll-link span {
+
+    color: var(--ack-red-bright);
+
+    font-size: 1.25rem;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.leadership-scroll-link:hover span {
+
+    transform:
+        translateY(5px);
+}
+
+
+.leadership-hero-index {
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    z-index: 3;
+
+    min-width: 190px;
+
+    padding: 21px 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    border-left:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    background:
+        rgba(10,11,15,0.45);
+
+    backdrop-filter: blur(12px);
+}
+
+
+.leadership-hero-index strong {
+
+    color: var(--ack-red-bright);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+}
+
+
+.leadership-hero-index span {
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.leadership-intro {
+
+    padding: 135px 0 125px;
+}
+
+
+.leadership-intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        150px
+        minmax(0, 850px);
+
+    gap: 65px;
+}
+
+
+.leadership-section-label {
+
+    padding-top: 8px;
+
+    color: var(--ack-muted);
+
+    font-size: 0.67rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+
+.leadership-intro h2 {
+
+    margin: 20px 0 0;
+
+    font-size: clamp(
+        2.8rem,
+        5vw,
+        4.8rem
+    );
+
+    line-height: 0.97;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.leadership-intro h2 span {
+
+    display: block;
+
+    color: var(--ack-red);
+}
+
+
+.leadership-copy {
+
+    max-width: 760px;
+
+    margin-top: 35px;
+}
+
+
+.leadership-copy p {
+
+    margin: 0 0 18px;
+
+    color: var(--ack-muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+.leadership-copy .leadership-lead {
+
+    color: var(--ack-text);
+
+    font-size: 1.15rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATEMENT
+========================================================= */
+
+.leadership-statement {
+
+    padding: 0 0 120px;
+}
+
+
+.leadership-statement-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns:
+        100px
+        minmax(0, 1fr);
+
+    gap: 30px;
+
+    padding: 65px 75px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #63262f,
+            #3f2025
+        );
+
+    color: white;
+}
+
+
+.leadership-statement-card::after {
+
+    content: '';
+
+    position: absolute;
+
+    right: -100px;
+    bottom: -160px;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    border:
+        70px solid
+        rgba(255,255,255,0.035);
+}
+
+
+.leadership-statement-number {
+
+    color: var(--ack-red-bright);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+}
+
+
+.leadership-statement-card h2 {
+
+    max-width: 700px;
+
+    margin: 18px 0 25px;
+
+    font-size: clamp(
+        2.7rem,
+        4.5vw,
+        4.3rem
+    );
+
+    line-height: 0.97;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.leadership-statement-card h2 span {
+
+    display: block;
+
+    color: var(--ack-red-bright);
+}
+
+
+.leadership-statement-card p {
+
+    max-width: 680px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   WHO WE ARE
+========================================================= */
+
+.leadership-who {
+
+    padding: 110px 0 135px;
+
+    background: var(--ack-light);
+}
+
+
+.leadership-who-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        0.75fr
+        1.25fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+.leadership-logo-panel {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.leadership-logo-circle {
+
+    width: 330px;
+    height: 330px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.08);
+}
+
+
+.leadership-logo-circle img {
+
+    width: 58%;
+
+    height: 58%;
+
+    object-fit: contain;
+}
+
+
+.leadership-logo-panel > span {
+
+    margin-top: 25px;
+
+    color: var(--ack-muted);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+
+.leadership-who-content h2 {
+
+    margin: 20px 0 30px;
+
+    font-size: clamp(
+        2.8rem,
+        5vw,
+        4.7rem
+    );
+
+    line-height: 0.96;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.leadership-who-content h2 span {
+
+    display: block;
+
+    color: var(--ack-red);
+}
+
+
+.leadership-who-content p {
+
+    max-width: 700px;
+
+    margin: 0 0 18px;
+
+    color: var(--ack-muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+.leadership-who-content .leadership-lead {
+
+    color: var(--ack-text);
+
+    font-size: 1.1rem;
+
+    line-height: 1.7;
+}
+
+ /* =========================================================
+   FOUNDERS
+========================================================= */
+
+.leadership-founders {
+    padding: 130px 0;
+    background: #ffffff;
+}
+
+
+.leadership-founders-heading {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 70px;
+    align-items: end;
+    margin-bottom: 55px;
+}
+
+
+.leadership-founders-heading h2 {
+    margin: 20px 0 0;
+
+    font-size: clamp(
+        2.8rem,
+        5vw,
+        4.7rem
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.leadership-founders-heading h2 span {
+    display: block;
+    color: #cf1b39;
+}
+
+
+.leadership-founders-heading > p {
+    margin: 0;
+
+    color: #747a84;
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+
+/* ---------------------------------------------------------
+   SIDE BY SIDE FOUNDERS
+--------------------------------------------------------- */
+
+.leadership-founders-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 4px;
+
+    width: 100%;
+}
+
+
+.leadership-founder {
+    position: relative;
+
+    width: 100%;
+
+    height: 560px;
+
+    overflow: hidden;
+
+    background: #191c22;
+}
+
+
+.leadership-founder img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: transform 0.6s ease;
+}
+
+
+.leadership-founder:hover img {
+    transform: scale(1.025);
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE GRADIENT
+--------------------------------------------------------- */
+
+.leadership-founder::after {
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.25) 35%,
+            rgba(0, 0, 0, 0) 65%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   FOUNDER INFORMATION
+--------------------------------------------------------- */
+
+.leadership-founder-overlay {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2;
+
+    padding: 32px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+}
+
+
+.leadership-founder-overlay h3 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 1.5rem;
+
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+}
+
+
+.leadership-founder-overlay p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+.leadership-founder-overlay > span {
+    color: #ff4965;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .leadership-founders {
+        padding: 90px 0;
+    }
+
+
+    .leadership-founders-heading {
+        display: block;
+
+        margin-bottom: 40px;
+    }
+
+
+    .leadership-founders-heading > p {
+        margin-top: 25px;
+    }
+
+
+    .leadership-founders-grid {
+        grid-template-columns: 1fr;
+
+        gap: 4px;
+    }
+
+
+    .leadership-founder {
+        height: 430px;
+    }
+
+
+    .leadership-founder-overlay {
+        padding: 24px;
+    }
+
+
+    .leadership-founder-overlay h3 {
+        font-size: 1.2rem;
+    }
+
+}
+
+
+.leadership-founder-card {
+
+    overflow: hidden;
+    background: var(--ack-light);
+}
+.leadership-founder-photo-0 {
+    object-position: center center;
+}
+.leadership-founder-photo-0 {
+    object-position: 50% 35%;
+}
+.leadership-founder-photo-1 {
+    object-position: center center;
+}
+.leadership-founder-image {
+    position: relative;
+    overflow: hidden;
+    background: #292b31;
+}
+
+.leadership-founder-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.5s ease;
+}
+
+.leadership-founder-card:hover
+.leadership-founder-image img {
+    transform: scale(1.025);
+}
+
+.leadership-founder-number {
+
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    padding: 8px 11px;
+
+    background:
+        rgba(0,0,0,0.5);
+
+    backdrop-filter: blur(8px);
+
+    color: var(--ack-red-bright);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+.leadership-founder-info {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 25px 28px;
+}
+
+
+.leadership-founder-info h3 {
+
+    margin: 0 0 5px;
+
+    color: var(--ack-text);
+
+    font-size: 1.2rem;
+
+    font-weight: 500;
+}
+
+
+.leadership-founder-info > div > span {
+
+    color: var(--ack-red);
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+.leadership-founder-arrow {
+
+    color: var(--ack-red);
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.leadership-philosophy {
+
+    padding: 125px 0;
+
+    background: var(--ack-light);
+}
+
+
+.leadership-philosophy-inner {
+
+    display: grid;
+
+    grid-template-columns:
+        100px
+        minmax(0, 850px);
+
+    gap: 30px;
+}
+
+
+.leadership-philosophy-number {
+
+    padding-top: 8px;
+
+    color: var(--ack-red);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+}
+
+
+.leadership-philosophy h2 {
+
+    margin: 20px 0 30px;
+
+    font-size: clamp(
+        2.8rem,
+        5vw,
+        4.8rem
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.leadership-philosophy h2 span {
+
+    display: block;
+
+    color: var(--ack-red);
+}
+
+
+.leadership-philosophy p {
+
+    max-width: 700px;
+
+    margin: 0 0 18px;
+
+    color: var(--ack-muted);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.leadership-cta {
+
+    padding: 105px 0;
+}
+
+
+.leadership-cta-card {
+
+    position: relative;
+
+    min-height: 430px;
+
+    overflow: hidden;
+
+    background: var(--ack-dark);
+
+    color: white;
+}
+
+
+.leadership-cta-card::after {
+
+    content: '';
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: 5px;
+
+    background: var(--ack-red);
+}
+
+
+.leadership-cta-effect {
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: 0;
+    right: 0;
+
+    width: 58%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: right center;
+
+    opacity: 0.45;
+}
+
+
+.leadership-cta-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+    padding: 75px;
+}
+
+
+.leadership-cta-content h2 {
+
+    margin: 20px 0;
+
+    font-size: clamp(
+        2.8rem,
+        5vw,
+        4.7rem
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 500;
+}
+
+
+.leadership-cta-content h2 span {
+
+    display: block;
+
+    color: var(--ack-red-bright);
+}
+
+
+.leadership-cta-content p {
+
+    max-width: 610px;
+
+    margin: 0 0 30px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .leadership-who-grid {
+
+        gap: 60px;
+    }
+
+
+    .leadership-logo-circle {
+
+        width: 270px;
+        height: 270px;
+    }
+
+
+    .leadership-founders-heading {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            320px;
+
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .leadership-container {
+
+        width:
+            calc(100% - 32px);
+    }
+
+
+    /* HERO */
+
+    .leadership-hero {
+
+        height:
+            calc(100svh - 65px);
+
+        min-height: 600px;
+    }
+
+
+    .leadership-hero-bg {
+
+        background-position:
+            65% center;
+    }
+
+
+    .leadership-hero h1 {
+
+        font-size:
+            clamp(
+                3.25rem,
+                13vw,
+                4.8rem
+            );
+    }
+
+
+    .leadership-hero-content > p {
+
+        max-width: 94%;
+
+        font-size: 0.9rem;
+    }
+
+
+    .leadership-hero-index {
+
+        left: 16px;
+        right: 16px;
+
+        min-width: 0;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        border-left: 0;
+    }
+
+
+    /* INTRO */
+
+    .leadership-intro {
+
+        padding: 90px 0;
+    }
+
+
+    .leadership-intro-grid {
+
+        display: block;
+    }
+
+
+    .leadership-section-label {
+
+        margin-bottom: 32px;
+    }
+
+
+    .leadership-intro h2 {
+
+        font-size: 2.8rem;
+    }
+
+
+    /* STATEMENT */
+
+    .leadership-statement {
+
+        padding-bottom: 80px;
+    }
+
+
+    .leadership-statement-card {
+
+        display: block;
+
+        padding: 50px 28px;
+    }
+
+
+    .leadership-statement-number {
+
+        margin-bottom: 35px;
+    }
+
+
+    .leadership-statement-card h2 {
+
+        font-size: 2.8rem;
+    }
+
+
+    /* WHO */
+
+    .leadership-who {
+
+        padding: 85px 0;
+    }
+
+
+    .leadership-who-grid {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 60px;
+
+        align-items: stretch;
+    }
+
+
+    .leadership-logo-circle {
+
+        width: 230px;
+        height: 230px;
+    }
+
+
+    .leadership-who-content h2 {
+
+        font-size: 2.8rem;
+    }
+
+ 
+
+    /* PHILOSOPHY */
+
+    .leadership-philosophy {
+
+        padding: 90px 0;
+    }
+
+
+    .leadership-philosophy-inner {
+
+        display: block;
+    }
+
+
+    .leadership-philosophy-number {
+
+        margin-bottom: 32px;
+    }
+
+
+    .leadership-philosophy h2 {
+
+        font-size: 2.8rem;
+    }
+
+
+    /* CTA */
+
+    .leadership-cta {
+
+        padding: 60px 0;
+    }
+
+
+    .leadership-cta-content {
+
+        padding: 55px 28px;
+    }
+
+
+    .leadership-cta-content h2 {
+
+        font-size: 2.8rem;
+    }
+
+
+    .leadership-cta-effect {
+
+        width: 100%;
+
+        opacity: 0.23;
+    }
+
+}
