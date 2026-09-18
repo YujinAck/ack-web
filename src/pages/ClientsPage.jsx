@@ -1,99 +1,422 @@
-
-
-import FooterComponent from './FooterComponent.jsx';
-import { useMediaQuery } from 'react-responsive'
+import FooterComponent from './FooterComponent.jsx'
 import HeaderComponent from './HeaderComponent.jsx'
 import ActionButton from '../components/ActionButton.jsx'
+
 import ManilaBldg1 from '../assets/manila-bldg-1.png'
 import FadeRed4 from '../assets/fades/fade-red-4.png'
 import RedLinesBG from '../assets/backgrounds/red-lines-bg.jpg'
-
 import LineEffect1 from '../assets/others/line-effect-2.png'
-import TileHeader from '../components/TileHeader.jsx';
-export default function ClientsPage(){
-  const isMobile = useMediaQuery({ maxWidth: 767 })
-  return (
-   <div className='careers-overview-page'  style={{backgroundColor:'#f5f5f5',minHeight:'100vh'}}>
-      <HeaderComponent/>
 
-      <div style={{ display:'flex', alignItems:'center', backgroundImage: "linear-gradient(rgba(255, 255, 255,1), rgba(255, 255, 255, 0.4)), url(" + RedLinesBG + ")",backgroundSize: 'cover',backgroundRepeat:'no-repeat', backgroundPosition:'center center',width:'100%',height:'90vh'}}>
-          <div style={{width:isMobile?'100%':'70%', paddingLeft:'5vw',paddingRight:'5vw'}}>
-              <p style={{fontSize:isMobile?'2rem':'2.6rem',fontWeight:'400',paddingTop:'8vh',color:'black'}}>Our Success History</p>
-              <p style={{fontSize:'1.6rem',fontWeight:'400',lineHeight:'1.8rem', color:'rgb(64, 64, 64)',marginTop:'12px'}}>We deliver comprehensive services covering consulting, training, customization, and ongoing maintenance. Our experts help organizations design the right solutions, build capable teams, tailor Avaloq to business needs, and ensure long-term platform stability.</p>
-              <br/>
-         </div>
-      </div>
-        
-      <div style={{}}>
-        <div style={{ paddingTop:'10vh'}}>
-            <div style={{backgroundColor:'#cf1b39',height:'100%',display:'flex',flexDirection:isMobile?'column':'row',justifyContent:'center'}}>
-                {!isMobile&&<div style={{width:'100%'}}>
-                  <div style={{width:'100%',alignContent:'center',justifyContent:'center',display:'flex',height:'100%'}}> 
-                    <div style={{overflow:'hidden',width:'100%',position:'relative '}}>
-                      <img src={FadeRed4} alt="fade" style={{ width: '100%', height: '100%', objectFit:'cover',position:'absolute' }} />
-                      <img src={ManilaBldg1} alt="manila ack logo" style={{ width: '100%', maxHeight:'60vh', height: '100%', objectFit:'cover' }} />
-                    </div>
-                  </div>
-                </div>}
-                <div style={{width:'100%',paddingRight:'5vw',paddingLeft:'5vw',paddingTop:'',paddingBottom:isMobile?'4vh':''}}>
-                  <div style={{display:'flex',flexDirection:'column',height:'100%',justifyContent:'center'}}>
-                    <p style={{fontSize:isMobile?'1.7rem':'2.4rem',fontWeight:'400',color:'white'}}>A proven track record</p>
-                    <p style={{fontSize:isMobile?'1rem':'1.2rem',fontWeight:'300',lineHeight:isMobile?'1.2rem':'1.5rem', color:'#ffeaee',marginTop:'2px'}}>Our proven track record reflects years of successful delivery across complex banking and financial environments. We have consistently supported institutions in implementing, enhancing, and stabilizing their Avaloq platforms—meeting tight timelines, navigating regulatory requirements, and ensuring seamless integrations.</p>
-                  </div>
-                </div>
-            </div>
-        </div>
- 
+import TileHeader from '../components/TileHeader.jsx'
 
-                    <div style={{paddingTop:'4vw',paddingBottom:'12vh',paddingLeft:'5vw', paddingRight:'5vw',backgroundColor:'rgb(228, 228, 228)'}}>
-                          <p style={{fontSize:isMobile?'1.1rem':'1.8rem',paddingBottom:'3vh', fontWeight:'600',color:'#cf1b39',textAlign:'center'}}>Our Project Success History</p>
-                  
-                        <div className='success-show' style={{display:'flex', flexDirection: 'row', flexWrap: 'wrap',gap:'1rem', justifyContent:'center', width:'100%',alignContent:'center'}}>
-                            <TileHeader title='Indonesian Bank'
-                                img='ID'
-                                tasks={['Implementation','Release Upgrade']}
-                                story='Implemented Secondary Bond functionality by configuring Avaloq components to support end-to-end trade processing and reporting. We also delivered Avaloq release upgrades through structured impact analysis and testing, ensuring a smooth transition while maintaining platform stability.'
-                                order={1}
-                            /> 
-                            <TileHeader title='Singapore Bank'
-                                img='SG'
-                                tasks={['Run the Bank','Change the Bank']}
-                                story='We supported both Run the Bank and Change the Bank initiatives for Singaporean banks by ensuring stable daily Avaloq operations while delivering controlled enhancements aligned with evolving business needs. This approach enabled continuous improvement and regulatory readiness.'
-                                order={2}
-                            /> 
-                            <TileHeader title='Taiwanese Bank'
-                                img='TW'
-                                tasks={['SIT Support','UAT Support','INTF Enhancement']}
-                                story='We provided SIT and UAT support for Taiwanese banks, ensuring smooth validation of Avaloq solutions and readiness for production. In parallel, we delivered interface component enhancements that improved system integration, data accuracy, and overall operational efficiency.'
-                                order={3}
-                            /> 
-                            <TileHeader title='Philippine Bank'
-                                img='PH'
-                                tasks={['UAT Support','PGL Support','Web Services']}
-                                story='We supported UAT and PGL activities for Philippine banks, ensuring solutions were fully validated and ready for production use. In addition, we implemented Avaloq web services to enhance system connectivity, streamline integrations, and support reliable end-to-end business processes.'
-                                order={4}
-                            /> 
+import './ClientsPage.css'
+import AckHelmet from '../components/AckHelmet.jsx'
+
+
+const projects = [
+    {
+        title: 'Indonesian Bank',
+        img: 'ID',
+        tasks: [
+            'Implementation',
+            'Release Upgrade'
+        ],
+        story:
+            'Implemented Secondary Bond functionality by configuring Avaloq components to support end-to-end trade processing and reporting. We also delivered Avaloq release upgrades through structured impact analysis and testing, ensuring a smooth transition while maintaining platform stability.',
+        order: 1
+    },
+    {
+        title: 'Singapore Bank',
+        img: 'SG',
+        tasks: [
+            'Run the Bank',
+            'Change the Bank'
+        ],
+        story:
+            'We supported both Run the Bank and Change the Bank initiatives for Singaporean banks by ensuring stable daily Avaloq operations while delivering controlled enhancements aligned with evolving business needs. This approach enabled continuous improvement and regulatory readiness.',
+        order: 2
+    },
+    {
+        title: 'Taiwanese Bank',
+        img: 'TW',
+        tasks: [
+            'SIT Support',
+            'UAT Support',
+            'INTF Enhancement'
+        ],
+        story:
+            'We provided SIT and UAT support for Taiwanese banks, ensuring smooth validation of Avaloq solutions and readiness for production. In parallel, we delivered interface component enhancements that improved system integration, data accuracy, and overall operational efficiency.',
+        order: 3
+    },
+    {
+        title: 'Philippine Bank',
+        img: 'PH',
+        tasks: [
+            'UAT Support',
+            'PGL Support',
+            'Web Services'
+        ],
+        story:
+            'We supported UAT and PGL activities for Philippine banks, ensuring solutions were fully validated and ready for production use. In addition, we implemented Avaloq web services to enhance system connectivity, streamline integrations, and support reliable end-to-end business processes.',
+        order: 4
+    }
+]
+
+
+export default function ClientsPage() {
+
+    return (
+        <div className="clients-page">
+        <AckHelmet
+            title="Clients | Banking Projects Across Asia | ACK Solutions"
+            description="Explore ACK Solutions' Avaloq delivery experience across Indonesia, Singapore, Taiwan, and the Philippines, covering implementation, upgrades, testing, integration, web services, and banking operations."
+            path="/clients"
+        />
+            <HeaderComponent />
+
+            <main>
+
+                {/* =====================================================
+                    HERO
+                ===================================================== */}
+
+                <section className="clients-hero">
+
+                    <div
+                        className="clients-hero-background"
+                        style={{
+                            backgroundImage: `
+                                linear-gradient(
+                                    90deg,
+                                    rgba(255,255,255,0.97) 0%,
+                                    rgba(255,255,255,0.91) 42%,
+                                    rgba(255,255,255,0.45) 75%,
+                                    rgba(255,255,255,0.15) 100%
+                                ),
+                                url(${RedLinesBG})
+                            `
+                        }}
+                    />
+
+                    <div className="clients-container">
+
+                        <div className="clients-hero-content">
+
+                            <div className="clients-eyebrow">
+                                CLIENTS & EXPERIENCE
+                            </div>
+
+                            <h1>
+                                Trusted where
+                                <span>banking gets complex.</span>
+                            </h1>
+
+                            <p>
+                                Our delivery experience spans banking
+                                organizations across Asia, supporting
+                                complex Avaloq initiatives from
+                                implementation and testing to enhancement,
+                                integration, and ongoing operations.
+                            </p>
+
+                            <div className="clients-hero-actions">
+
+                                <a
+                                    href="#projects"
+                                    className="clients-scroll-link"
+                                >
+                                    Explore our experience
+                                    <span>↓</span>
+                                </a>
+
+                            </div>
+
                         </div>
+
                     </div>
-        <div className='footer-msg-careers' style={{padding:'5vw'}}>
-          
-            <div style={{backgroundColor:'#cf1b39',borderRadius:'18px',position:'relative'}}>
-                <div style={{display:'flex',position:'absolute',width:'100%',height:'100%',pointerEvents:'none', justifyContent:'flex-end',zIndex:0 }}>
-                  <img src={LineEffect1} alt="fade" style={{float: 'right', objectFit:'contain'}} />
-                </div>
-              <div style={{padding:'42px 8vw',zIndex:4}}>
-                <p style={{fontSize:'1.3rem',fontWeight:'500',color:'white'}}>Are you ready to take the leap</p>
-                <p style={{fontSize:'1rem',fontWeight:'400',color:'white',opacity:'0.85'}}>Step forward with confidence and explore opportunities that challenge and inspire you to grow.</p>
-                <br/>
-                
-                <ActionButton title='Contact Us' type='white'/>
-              </div>
-            </div>
+
+                    <div className="clients-hero-index">
+
+                        <strong>01</strong>
+
+                        <span>
+                            Client experience
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                {/* =====================================================
+                    INTRO / FOOTPRINT
+                ===================================================== */}
+
+                <section className="clients-intro">
+
+                    <div className="clients-container">
+
+                        <div className="clients-intro-grid">
+
+                            <div className="clients-section-label">
+                                OUR EXPERIENCE
+                            </div>
+
+                            <div>
+
+                                <div className="clients-kicker">
+                                    ACROSS ASIA
+                                </div>
+
+                                <h2>
+                                    Experience built through
+                                    <span>real delivery.</span>
+                                </h2>
+
+                                <div className="clients-intro-copy">
+
+                                    <p className="clients-lead">
+                                        ACK Solutions has supported
+                                        banking and financial institutions
+                                        across multiple markets, working
+                                        alongside teams to deliver and
+                                        maintain critical Avaloq solutions.
+                                    </p>
+
+                                    <p>
+                                        From project implementation and
+                                        release upgrades to SIT, UAT,
+                                        interfaces, web services, and
+                                        Run-the-Bank support, our experience
+                                        reflects the practical demands of
+                                        banking technology delivery.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div className="clients-markets">
+
+                            <div className="clients-market">
+                                <span className="clients-market-code">
+                                    ID
+                                </span>
+
+                                <div>
+                                    <strong>Indonesia</strong>
+                                    <span>Implementation & upgrades</span>
+                                </div>
+                            </div>
+
+                            <div className="clients-market">
+                                <span className="clients-market-code">
+                                    SG
+                                </span>
+
+                                <div>
+                                    <strong>Singapore</strong>
+                                    <span>Run & Change the Bank</span>
+                                </div>
+                            </div>
+
+                            <div className="clients-market">
+                                <span className="clients-market-code">
+                                    TW
+                                </span>
+
+                                <div>
+                                    <strong>Taiwan</strong>
+                                    <span>Testing & integration</span>
+                                </div>
+                            </div>
+
+                            <div className="clients-market">
+                                <span className="clients-market-code">
+                                    PH
+                                </span>
+
+                                <div>
+                                    <strong>Philippines</strong>
+                                    <span>UAT & web services</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                {/* =====================================================
+                    PROVEN TRACK RECORD
+                ===================================================== */}
+
+                <section className="clients-track-record">
+
+                    <div className="clients-track-image">
+
+                        <img
+                            src={FadeRed4}
+                            alt=""
+                            className="clients-track-fade"
+                        />
+
+                        <img
+                            src={ManilaBldg1}
+                            alt="Manila business district"
+                            className="clients-track-building"
+                        />
+
+                    </div>
+
+
+                    <div className="clients-track-content">
+
+                        <div className="clients-kicker light">
+                            PROVEN DELIVERY
+                        </div>
+
+                        <h2>
+                            A track record built
+                            <span>on delivery.</span>
+                        </h2>
+
+                        <p className="clients-track-lead">
+                            Our proven track record reflects years of
+                            successful delivery across complex banking
+                            and financial environments.
+                        </p>
+
+                        <p>
+                            We have consistently supported institutions
+                            in implementing, enhancing, and stabilizing
+                            their Avaloq platforms — meeting tight
+                            timelines, navigating regulatory requirements,
+                            and ensuring seamless integrations.
+                        </p>
+
+                        <div className="clients-track-line" />
+
+                        <span className="clients-track-caption">
+                            AVALOQ · BANKING · DELIVERY
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                {/* =====================================================
+                    PROJECTS
+                ===================================================== */}
+
+                <section
+                    id="projects"
+                    className="clients-projects"
+                >
+
+                    <div className="clients-container">
+
+                        <div className="clients-section-heading">
+
+                            <div>
+
+                                <div className="clients-kicker">
+                                    PROJECT EXPERIENCE
+                                </div>
+
+                                <h2>
+                                    What we've helped
+                                    <span>our clients deliver.</span>
+                                </h2>
+
+                            </div>
+
+                            <p>
+                                Selected examples of initiatives where
+                                our Avaloq expertise supported banking
+                                teams across the region.
+                            </p>
+
+                        </div>
+
+
+                        <div className="clients-project-grid">
+
+                            {projects.map(project => (
+                                <TileHeader
+                                    key={project.order}
+                                    title={project.title}
+                                    img={project.img}
+                                    tasks={project.tasks}
+                                    story={project.story}
+                                    order={project.order}
+                                />
+                            ))}
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                {/* =====================================================
+                    CTA
+                ===================================================== */}
+
+                <section className="clients-cta">
+
+                    <div className="clients-container">
+
+                        <div className="clients-cta-card">
+
+                            <img
+                                src={LineEffect1}
+                                alt=""
+                                className="clients-cta-effect"
+                            />
+
+                            <div className="clients-cta-content">
+
+                                <div className="clients-kicker light">
+                                    WORK WITH ACK
+                                </div>
+
+                                <h2>
+                                    Have a banking initiative
+                                    <span>you need to move forward?</span>
+                                </h2>
+
+                                <p>
+                                    Let's discuss how our Avaloq
+                                    experience can support your next
+                                    implementation, enhancement, or
+                                    delivery initiative.
+                                </p>
+
+                                <ActionButton
+                                    title="Contact us"
+                                    type="white"
+                                />
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <FooterComponent />
 
         </div>
-      </div>
-        
-      <FooterComponent/>
-   </div>
-  )
+    )
 }

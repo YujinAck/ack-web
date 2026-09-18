@@ -1,0 +1,358 @@
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ack-header {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-bottom: 1px solid #e8e8ea;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+
+.ack-header-container {
+    width: min(1380px, 90%);
+
+    height: 82px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.ack-header-logo {
+    display: flex;
+
+    align-items: center;
+
+    width: 70px;
+    height: 70px;
+
+    text-decoration: none;
+}
+
+
+.ack-header-logo img {
+    width: 62px;
+    height: 62px;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.ack-header-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 42px;
+
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+
+.ack-header-nav-link {
+    position: relative;
+
+    padding: 8px 0;
+
+    color: #3e4148;
+
+    font-size: 0.76rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.03em;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.ack-header-nav-link::after {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: #cf1b39;
+
+    transition:
+        width 0.25s ease;
+}
+
+
+.ack-header-nav-link:hover {
+    color: #cf1b39;
+}
+
+
+.ack-header-nav-link:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.ack-header-cta {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    min-height: 42px;
+
+    padding: 0 20px;
+
+    background: #cf1b39;
+
+    color: white;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.ack-header-cta:hover {
+    background: #a9152e;
+
+    transform: translateY(-1px);
+}
+
+
+.ack-header-cta-arrow {
+    font-size: 1rem;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.ack-header-cta:hover .ack-header-cta-arrow {
+    transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.ack-header-menu {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+.ack-header-menu span {
+    display: block;
+
+    width: 23px;
+    height: 1.5px;
+
+    margin: 5px auto;
+
+    background: #292c34;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+.ack-header-menu.is-open span:first-child {
+    transform:
+        translateY(3.25px)
+        rotate(45deg);
+}
+
+
+.ack-header-menu.is-open span:last-child {
+    transform:
+        translateY(-3.25px)
+        rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.ack-mobile-menu {
+    display: none;
+
+    overflow: hidden;
+
+    border-top: 1px solid #eeeeef;
+
+    background: white;
+}
+
+
+.ack-mobile-menu nav {
+    width: min(1380px, 90%);
+
+    margin: 0 auto;
+
+    padding: 12px 0 25px;
+}
+
+
+.ack-mobile-menu nav > a {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #eeeeef;
+
+    color: #292c34;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.ack-mobile-menu nav > a span:last-child {
+    color: #cf1b39;
+
+    font-size: 1rem;
+}
+
+
+.ack-mobile-cta {
+    margin-top: 18px;
+
+    padding: 15px 18px !important;
+
+    border: 0 !important;
+
+    background: #cf1b39;
+
+    color: white !important;
+}
+
+
+.ack-mobile-cta span {
+    color: white !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .ack-header-nav {
+        gap: 24px;
+
+        margin-right: 25px;
+    }
+
+
+    .ack-header-nav-link {
+        font-size: 0.7rem;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .ack-header-container {
+        width: calc(100% - 40px);
+
+        height: 72px;
+    }
+
+
+    .ack-header-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .ack-header-logo img {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    .ack-header-nav,
+    .ack-header-cta {
+        display: none;
+    }
+
+
+    .ack-header-menu {
+        display: block;
+    }
+
+
+    .ack-mobile-menu {
+        display: block;
+    }
+
+}
