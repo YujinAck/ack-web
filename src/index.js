@@ -6,11 +6,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ScrollToTop from './components/ScrollToTop.jsx'
 
+import { HelmetProvider } from 'react-helmet-async';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <ScrollToTop />
-    <App />
+  <HelmetProvider>
+       <ScrollToTop />
+      <App />
+    </HelmetProvider>
   </BrowserRouter>
+
 );
 reportWebVitals();

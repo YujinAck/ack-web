@@ -13,6 +13,7 @@ import Services4 from '../assets/services/maintain-img-1.jpg'
 import LineEffect3 from '../assets/others/line-effect-3.png'
 
 import './SolutionsPage.css'
+import AckHelmet from '../components/AckHelmet.jsx'
 
 
 const services = [
@@ -76,7 +77,11 @@ export default function SolutionsPage() {
 
     return (
         <div className="solutions-page">
-
+            <AckHelmet
+                title="Solutions | Consulting, Training, Customization & Maintenance | ACK Solutions"
+                description="ACK Solutions provides Avaloq consulting, training, customization, maintenance, and ongoing support for banks and financial institutions."
+                path="/solutions"
+            />
             <HeaderComponent />
 
             <main>

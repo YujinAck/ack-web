@@ -13,11 +13,11 @@ const navItems = [
   },
   {
     label: 'Clients',
-    to: '/about/clients',
+    to: '/clients',
   },
   {
     label: 'Leadership',
-    to: '/about/leadership',
+    to: '/leadership',
   },
   {
     label: 'Careers',

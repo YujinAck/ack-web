@@ -5,6 +5,7 @@ import FooterComponent from './FooterComponent.jsx'
 
 import AckLogoPng from '../assets/ack-logo.png'
 
+import { Helmet } from 'react-helmet-async';
 import ShowPic1 from '../assets/portraits/show-pic-1.jpg'
 import ShowPic2 from '../assets/portraits/show-pic-2.jpg'
 import ShowPic4 from '../assets/portraits/show-pic-4.jpg'
@@ -35,6 +36,56 @@ function HomePage() {
 
     return (
         <div className="ack-home">
+
+            <Helmet>
+                <title>ACK Solutions Inc. | Avaloq & Banking Technology</title>
+
+                <meta
+                    name="description"
+                    content="ACK Solutions provides specialized Avaloq expertise for banks and financial institutions, supporting implementation, customization, training, maintenance, and banking technology delivery."
+                />
+
+                <meta
+                    name="keywords"
+                    content="ACK Solutions, Avaloq, Avaloq consulting, Avaloq customization, Avaloq training, Avaloq maintenance, banking technology, banking software, financial technology"
+                />
+
+                <meta property="og:title" content="ACK Solutions Inc. | Avaloq & Banking Technology" />
+
+                <meta
+                    property="og:description"
+                    content="Specialized Avaloq expertise for banks and financial institutions — from implementation and customization to training, maintenance, and operational support."
+                />
+
+                <meta property="og:type" content="website" />
+
+                <meta
+                    property="og:url"
+                    content="https://acksolutionsinc.com"
+                />
+
+                <meta
+                    property="og:site_name"
+                    content="ACK Solutions Inc."
+                />
+
+                <meta name="twitter:card" content="summary_large_image" />
+
+                <meta
+                    name="twitter:title"
+                    content="ACK Solutions Inc. | Avaloq & Banking Technology"
+                />
+
+                <meta
+                    name="twitter:description"
+                    content="Specialized Avaloq expertise helping banks and financial institutions deliver, enhance, and operate Avaloq solutions."
+                />
+
+                <link
+                    rel="canonical"
+                    href="https://acksolutionsinc.com"
+                />
+            </Helmet>
 
             <HeaderComponent />
 

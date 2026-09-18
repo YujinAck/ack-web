@@ -10,6 +10,7 @@ import LineEffect1 from '../assets/others/line-effect-2.png'
 import TileHeader from '../components/TileHeader.jsx'
 
 import './ClientsPage.css'
+import AckHelmet from '../components/AckHelmet.jsx'
 
 
 const projects = [
@@ -66,7 +67,11 @@ export default function ClientsPage() {
 
     return (
         <div className="clients-page">
-
+        <AckHelmet
+            title="Clients | Banking Projects Across Asia | ACK Solutions"
+            description="Explore ACK Solutions' Avaloq delivery experience across Indonesia, Singapore, Taiwan, and the Philippines, covering implementation, upgrades, testing, integration, web services, and banking operations."
+            path="/clients"
+        />
             <HeaderComponent />
 
             <main>

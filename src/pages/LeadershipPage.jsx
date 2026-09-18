@@ -9,6 +9,7 @@ import CelsoRed from '../assets/people/celso-red-sq.jpg'
 import LineEffect1 from '../assets/others/line-effect-2.png'
 
 import './LeadershipPage.css'
+import AckHelmet from '../components/AckHelmet.jsx'
 
 
 const leaders = [
@@ -31,7 +32,11 @@ export default function LeadershipPage() {
 
     return (
         <div className="leadership-page">
-
+<AckHelmet
+    title="Leadership | ACK Solutions Inc."
+    description="Meet the leadership team behind ACK Solutions and learn about the experience and expertise driving our Avaloq and banking technology services."
+    path="/leadership"
+/>
             <HeaderComponent />
 
             <main>
