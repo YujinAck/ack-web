@@ -15,6 +15,7 @@ import Maroon1 from '../assets/fades/fade-maroon-1.png';
 import LineEffect1 from '../assets/others/line-effect-2.png';
 
 import './CareersOverviewPage.css';
+import AckHelmet from '../components/AckHelmet.jsx';
 
 
 const cultureItems = [
@@ -48,7 +49,11 @@ const cultureItems = [
 export default function CareersOverviewPage() {
   return (
     <div className="careers-page">
-
+         <AckHelmet
+                title="Careers | Banking Technology & Avaloq Opportunities | ACK Solutions"
+                description="Join ACK Solutions and work on real-world banking technology projects involving Avaloq and financial institutions across the region."
+                path="/careers"
+            />
       <HeaderComponent />
 
 
